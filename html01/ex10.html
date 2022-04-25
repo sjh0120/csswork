@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style rel="stylesheet" type="text/css">
+            /* 안됨!
+            table>tr:nth-child(2n){
+                background-color: gray;
+            }
+            */
+
+            /* 브라우저마다 다르지만 table아래에 tbody가 생기는 애도 있기때문에 됨
+            케바케임 안좋음!
+            table>tbody>tr:nth-child(2n){
+                background-color: gray;
+            }
+
+            thead, tbody를 설정해주지 않으면 브라우저 마다 다르지만,
+            대부분 tbody로 전부 다 넣음
+            나중에 코드의 재활용을 위해서 thead, tbody를 명시적으로 선언해주는 것이 좋다!
+            
+
+            tr:nth-child(2n){
+                background-color: gray;
+            }
+            */
+
+            /* thead, tbody를 해주고 이렇게 해주는게 좋다
+            table>tbody>tr:nth-child(2n-1){
+                background-color: gray;
+            }
+            */
+
+            /* 해석이 중요하다
+            table의 tr아래 2n-1에 해당하는 td를 선택해서 bgc설정
+            */
+            table tr>td:nth-child(2n-1){
+                background-color: gray;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <h1>학생성적관리 프로그램</h1>
+        <table>
+            <thead>
+            <tr>
+                <th>학번</th>
+                <th>이름</th>
+                <th>국어</th>
+                <th>영어</th>
+                <th>수학</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>1</td>
+                <td>user1</td>
+                <td>11</td>
+                <td>22</td>
+                <td>33</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>user2</td>
+                <td>44</td>
+                <td>55</td>
+                <td>66</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>user3</td>
+                <td>77</td>
+                <td>88</td>
+                <td>99</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>user4</td>
+                <td>41</td>
+                <td>42</td>
+                <td>43</td>
+            </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

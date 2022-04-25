@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style rel="stylesheet" type="text/css">
+            a{
+                color: red;
+            }
+            #id02{
+                color: blue;
+            }
+            .cl03{
+                color:purple;
+            }
+            #id03{
+                color:brown;
+            }
+            h2{
+                color:green;
+            }
+        </style>
+        <!-- 
+            선택자 우선순위
+            1.인라인(절대 쓰지말기)
+            2.id선택자
+            3.클래스선택자
+            4.태그선택자
+            +동일한 수준의 선택자일 경우 제일 마지막 선언으로 설정됨
+        -->
+    </head>
+    <body>
+        <h1>css 선택자</h1>
+        <p class="cl03">내용</p>
+        <h2>태그<a href="#">선택자</a>1</h2>
+        <p>태그이름</p>
+        <h2 id="id02">아이디선택자2</h2>
+        <p>#아이디명</p>
+        <p>특정 아이디는 한문서에서 유일, 따라서 중복 불가능</p>
+        <h2 id="id03" class="cl03">클래스<a href="#">선택자</a>3</h2>
+        <p>.클래스명 / 엘리먼트의 종류가 서로 다를지라도 부여가능</p>
+        <p>한 문서에서 여러번 부여가능</p>
+        <h2 class="cl03">클래스선택자4</h2>
+        <p>내용</p>
+        <ul>
+            <li>abcd<a href="#">link</a>efg</li>
+            <li>abcd<a href="#">link</a>efg</li>
+            <li>abcd<a href="#">link</a>efg</li>
+            <li>abcd<a href="#">link</a>efg</li>
+            <li>abcd<a href="#">link</a>efg</li>
+        </ul>
+    </body>
+</html>

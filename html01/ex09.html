@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style rel="stylesheet" text="text/css">
+            /*동일 형제 h1+h2+p => 안됨 h1다음 p다음 h2다음 p이기 때문
+            h1+p+h2+p+h2+p{
+                color:red;
+            }
+            */
+
+            /*동일 덱스상에서의 p태그
+            h1~p{
+                color:red;
+            }
+            */
+
+            /*h2아래의 모든 p태그
+            h2+p{
+                color:red;
+            }
+            */
+
+            /*div아래 h2아래의 p태그
+            div>h2+p{
+                color:red;
+            }
+            */
+
+            /*body와래의 h1다음 p다음 h2
+            body>h1+p+h2{
+                color:red;
+            }
+            */
+
+            /* body아래의 div 아래의 h2만
+            body>div>h2{
+                color:red;
+            }
+            */
+
+            /* body아래의 (자식수준) p태그들 
+            body>p{
+                color:red;
+            }
+            */
+
+            /* body아래의 모든 p태그들
+            body p{
+                color:red;
+            }
+            */
+
+            /* h1다음의 p태그, div아래의 모든 p태그들
+            즉 ,는 다중 선택의 기능을 한다!
+            중간에 스페이스바가 들어가면 어지러워짐...
+            
+            h1+p,div>p{
+                color:red;
+            }
+            */
+
+            /* ul li둘다 결과는 같지만 잡는 대상이 조금은 의미적으로 다름
+            ul{
+                color:red;
+            }
+
+            li{
+                color:red;
+            }
+            */
+            
+            /* ul아래의 li의 첫번째 자식만
+            ul>li:first-child{
+                color:red;
+            }
+            */
+
+            /* ul아래의 li의 마지막 자식만
+            ul>li:last-child{
+                color:red;
+            }
+            */
+
+            /*
+            ul>li:first-child+li+li{
+                color:red;
+            }
+            */
+
+            /* 4번째
+            ul>li:nth-child(4){
+                color:red;
+            }
+            */
+
+            /* 2의 배수 번째에만 
+            ul>li:nth-child(2n){
+                color:red;
+            }
+            */
+            /* css는 숫자 연산이 되지 않는다 그러나 child에 대한 숫자 연산만을 지원해준다 */
+            
+            ul>li:nth-child(3n-1){
+                color:red;
+            }
+            /* child에 대한 연산은 지원해주기 때문에 이거 또한 가능 */
+
+
+        </style>
+    </head>
+    <body>
+        <h1>태그 선택자를 이용한 엘리먼트 타겟팅</h1>
+        <p>태그선택자만을 이용</p>
+        <h2>제목</h2>
+        <p>내용</p>
+        <h2>제목</h2>
+        <p>내용</p>
+        <div>
+            <h2>제목</h2>
+            <p>내용</p>
+        </div>
+        <ul>
+            <li>item<span>1</span></li>
+            <li>item<span>2</span></li>
+            <li>item<span>3</span></li>
+            <li>item<span>4</span></li>
+            <li>item<span>5</span></li>
+            <li>item<span>6</span></li>
+        </ul>
+    </body>
+</html>
