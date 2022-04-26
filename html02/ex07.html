@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style rel="stylesheet" type="text/css">
+            body>*{
+                width:500px;
+                border: 1px solid gray;
+                margin:0px auto 0px auto;
+            }
+            nav{
+                background-color: gray;
+                text-align: center;
+            }
+            nav>a{
+                color: white;
+                text-decoration: none;
+                border-left: 1px solid white;
+                padding: 5px;
+            }
+            nav>a:last-child{
+                border-right: 1px solid white;
+            }
+            nav>a:hover{
+                color: yellow;
+            }
+            section,aside{
+                display: inline-block;
+                height:200px;
+            }
+            section{
+                width: 300px;
+            }
+            aside{
+                width: 194px;
+            }
+            aside>a{
+                display: block;
+            }
+            aside>a>img{
+                width: 100%;
+            }
+            footer{
+                border-top: 5px double gray;
+                text-align: center;
+                margin-top: 50px;
+                height: 100px;
+                padding-top: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+        <header>
+            <img src="imgs/logo.jpg">
+        </header>
+        <nav>
+            <a href="ex07.html">HOME</a>
+            <a href="ex01.html">EX01</a>
+            <a href="ex02.html">EX02</a>
+            <a href="ex03.html">EX03</a>
+        </nav>
+        <section>
+            <h1>Sementic Elements in HTML</h1>
+            <p>The World Wide Fund for Nature</p>
+        </section>
+        <aside>
+            <a href="http://google.com"><img src="imgs/google.png"></a>
+            <a href="http://naver.com"><img src="imgs/naver.png"></a>
+        </aside>
+        <footer>
+            <address>주소</address>
+            저작권~
+        </footer>
+        </div>
+    </body>
+</html>

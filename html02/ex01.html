@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style rel="stylesheet" type="text/css">
+            /*
+            nav{
+                color:red;
+                이거만으로는 a태그까지 색이 변하지 않음!
+            }
+            */
+            /*방문한적 없을때
+            nav>a:link{
+                color:yellow;
+            }
+            방문한적 있을 때
+            nav>a:visited{
+                color:blue;
+            }
+            마우스가 위로 올라왔을때
+            nav>a:hover{
+                color:red;
+            }
+            actie 되는 순간
+            nav>a:active{
+                color:green;
+            }
+            */
+
+            /*보통 이렇게 사용함*/
+            /*방문한적 없을때*/
+            nav>a:link, nav>a:visited{
+                color:blue;
+            }
+
+            /*마우스가 위로 올라왔을때*/
+            nav>a:hover, nav>a:active{
+                color:red;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <h1>선택자</h1>
+        <nav>
+            ex01:<a href="../html01/ex01.html">link1</a>
+            ex02:<a href="../html01/ex02.html">link2</a>
+        </nav>
+    </body>
+</html>

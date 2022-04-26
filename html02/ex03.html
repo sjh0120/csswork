@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style role="stylesheet" type="text/css">
+            h1{
+                color:blue;
+                font-size: 150%; 
+                /*
+                디폴트 폰트 사이즈 : 100% -> 거의 안씀
+                em과 같기 때문! 100% = 1em
+                
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                family인 이유 : 앞에 글자체가 없으면 다음거, 없으면 또 다음거 이렇게 하기 때문에
+                */
+                font-family: '궁서체','맑은고딕',Arial, Helvetica, sans-serif;
+                /*이렇게 해도 됨 궁서체, 맑은고딕 해도 된다 하지만 제일 마지막엔 항상 시스템 기본 글자체 하기!*/
+            }
+            h1+p{
+                font-size: 1.5em;
+                font-weight: bold;
+                font-style: italic;
+            }
+            h1+p+h2{
+                font-size: 12pt;
+                /*
+                단위 및 ; 잘 찍기
+                pt와 px은 크기가 다르다!
+                */
+            }
+            h1+p+h2+p+h2{
+                font-size: 16px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>대제목</h1>
+        <p>내용</p>
+        <h2>중제목</h2>
+        <p>내용</p>
+        <h2>중제목</h2>
+        <p>내용</p>
+        <h3>소제목1</h3>
+        <p>내용</p>
+        <h3>소제목2</h3>
+        <p>내용</p>
+        <h3>소제목3</h3>
+        <p>내용</p>
+    </body>
+</html>

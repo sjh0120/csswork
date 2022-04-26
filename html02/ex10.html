@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style rel="stylesheet" type="text/css">
+            body{
+                background-image: url(imgs/bg.jpg);
+                background-repeat: repeat-x;
+                /*바디에서 또한 가능*/
+            }
+            img{
+                width: 300px;
+                height: 200px;
+                /*이미지가 커짐*/
+            }
+            h2{
+                background-image: url(imgs/logo.jpg);
+                /*
+                background-size: 300px 200px;
+                이렇게하면 똑같이 커진 이미지 1장만 나옴
+                */
+                /*background-repeat: no-repeat;*/
+                /*백그라운드의 크기는 크지만 300 200만큼 이미지를 겹치는 것이 아니라 한번만 나온다!*/
+                
+                /*
+                background-size: 100px 100px;
+                background-repeat: repeat-y;
+                */
+                /*y축으로 반복 repeat-x 는 x축으로 반복*/
+
+                /*
+                width: 300px;
+                height: 300px;
+                */
+                /*300 300만큼 이미지가 여러번 깔림*/
+
+                width: 205px;
+                height: 42px;
+                text-indent: -9999px;
+                /*우클릭 했을때 이미지 저장이 안됨*/
+                /*내용 설명을 위해 이미지를 썻을 경우에는 이렇게 하면 이미지 정보가 안나오기 때문에 안좋음!*/
+            }
+            h1{
+                background-color: aqua;
+                /*width:50%*/
+                width:200px;
+                /*border: 5px solid gray;*/
+                border-radius: 20px;
+                /*모서리 둥글게 + border이 없어도 혼자서도 됨*/
+            }
+
+            div+img{
+                /*border-radius: 30px;
+                border-top-left-radius: 30px;*/
+                /*또한 있다*/
+                border-radius: 30px 10px 0px 20px;
+            }
+            a{
+                border: 1px solid black;
+                display: block;
+                width: 80px;
+                height: 30px;
+                
+                border-radius: 5px;
+                text-align: center;
+                text-decoration: none;
+                line-height: 30px;
+                color: black;
+                background-color: gray;
+            }
+            a:hover{
+                cursor:default;
+            }
+            form{
+                display: inline;
+                width: 100px;
+            }
+            form>button{
+                border-width: 0px;
+                text-decoration: underline;
+                background-color: white;
+                color: blue;
+            }
+            form>button:hover{
+                cursor:pointer;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1>이미지 처리</h1>
+        <div>
+            <img src="imgs/logo.jpg"/>
+        </div>
+        <div>
+            <h2>이미지</h2>
+        </div>
+        <img src="imgs/index.png"/>
+        <a href="ex09.html">입력</a>
+        <form action="ex08.html">
+            <button>입력2</button>
+        </form>
+
+    </body>
+</html>

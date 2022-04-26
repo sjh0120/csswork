@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style rel="stylesheet" type="text/css">
+            body>*{
+                border:3px solid gray;
+            }
+            h1, p{
+                margin: 0px 0px 0px 0px;
+                        /*위 오른쪽 아래 왼쪽*/
+            }
+            p{
+                padding: 10px;
+            }
+            h1,p{
+                width: 400px;
+                height: 200px;
+            }
+            span{
+                width:300px;
+                height:200px;
+                display: inline-block;
+                /*높이와 넓이의 값은 있지만 contents에 의해서 높이와 넓이가 정해짐*/
+                /*inline을 통해서 한줄로도 출력이 가능하다*/
+            }
+            div{
+                display:inline;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>box modeling</h1>
+        <p>내
+            용</p>
+        <div>box1</div> <!-- 개행에 있어서 개행은 -->
+        <div>box2</div>
+        <div>box3</div>
+        <span>box4</span>
+        <span>box5</span>
+        <span>box6</span>
+    </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style rel="stylesheet" type="text/css">
+            h1{
+                color:red;
+                background-color: aqua;
+            }
+            p+div{
+                color:#ff0000;
+                background-color: #0000FF;
+            }
+            p+div+div{
+                color:rgb(0,255,0);
+                background-color: rgb(255,255,0);
+                
+            }
+            p+div+div+div{
+                /*
+                background-color: rgba(0,0,255,0.5);
+                맨뒤는 투명도
+                투명도에 0을 줘도 엘리멘트(글자)는 안지워짐
+                */
+                background-color: rgb(0,0,255);
+                opacity: 0.5;
+                /*이렇게 해도 됨 그러나이렇게 하면 엘리멘트 전체(box4글자까지)가 투명해짐*/
+            }
+            /*숨기는 방법1 -> 엘리멘트는 존재*/
+            p+div+div+div+div+div{
+                background-color: rgba(0,0,255);
+                visibility: hidden;
+            }
+
+            /*숨기는 방법2 -> 엘리멘트 존재 x*/
+            p+div+div+div+div{
+                background-color: rgba(0,0,255);
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>css 스타일</h1>
+        <p>스타일제어</p>
+        <div>box1</div>
+        <div>box2
+            <ul><li>child2</li></ul>
+        </div>
+        <div>box3</div>
+        <div>box4
+            <ul><li>child4</li></ul>
+        </div>
+        <div>box5</div>
+        <div>box6
+            <ul><li>child6</li></ul>
+    </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style rel="stylesheet" type="text/css">
+            h1{
+                border-width:1px;
+                border-style: solid;
+                border-color: gray;
+                /*border-botton-width:1px 또한 가능!*/
+
+            }
+            table{
+                border-collapse: collapse;
+                /*셀스페이스의 공간을 없을 때 사용하는 함수*/
+                width: 500px;
+            }
+            table tr>th:first-child{
+                width: 100px;
+            }
+            /*
+            table tr>th:nth-child(2){
+                width: 100px;
+            }
+            */
+            table,th,td{
+                /*3가지 다 줘야만 함*/
+                border-width:1px;
+                border-style: solid;
+                border-color: gray;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>테이블</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>col1</th>
+                    <th>col2</th>
+                    <th>col3</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>row1</td>
+                    <td>row1</td>
+                    <td>row1</td>
+                </tr>
+                <tr>
+                    <td>row2</td>
+                    <td>row2</td>
+                    <td>row2</td>
+                </tr>
+                <tr>
+                    <td>row3</td>
+                    <td>row3</td>
+                    <td>row3</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
