@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style rel="stylesheet" type="text/css">
+            div{
+                width: 150px;
+                height: 150px;
+            }
+            body>div:nth-child(2){
+                background-color: aqua;
+            }
+            body>div:nth-child(3){
+                background-color: burlywood;
+                position:absolute;
+                margin-left: 100px;
+            }
+            body>div:nth-child(4){
+                background-color: blue;
+            }
+            div>div{
+                width: 50px;
+                height: 50px;
+                background-color: red;
+                /*
+                그대로
+                position: static;(부모 또한 static)
+                */
+
+                /*
+                부모(static)
+                left top안주면 원래 자기 위치
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                */
+                position: absolute;
+                left: 0px;
+                top: 0px;
+
+
+                
+            }
+        </style>
+    </head>
+    <body>
+        <h1>absolute - 부모 기준</h1>
+        <div>box1</div>
+        <div>box2
+            <div>box4</div>
+        </div>
+        <div>box3</div>
+    </body>
+</html>

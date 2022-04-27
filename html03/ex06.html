@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style rel="stylesheet" type="text/css">
+            div{
+                width: 150px;
+                height: 150px;
+            }
+            body>div:nth-child(2){
+                background-color: aqua;
+            }
+            body>div:nth-child(3){
+                background-color: burlywood;
+                position: fixed;
+            }
+            body>div:nth-child(4){
+                background-color: blue;
+            }
+            div>div{
+                width: 50px;
+                height: 50px;
+                background-color: red;
+                position: fixed;
+                /*애가 fixed가 아니라도 부모가 fixed 이기 때문에 따라 움직임 + 위치도 줄 수 있음*/
+                top:0px;
+                /*부모의 position 이 무엇이든지 간에 자식이 fixed이면 자유롭게 움직인다*/
+                /*앱솔루트의 기준은 부모의 위치를 기준으로 하기 때문에 앱솔루트여도 움직인다!*/
+            }
+        </style>
+    </head>
+    <body>
+        <h1>fixed-fixed</h1>
+        <div>box1</div>
+        <div>box2
+            <div>box4</div>
+        </div>
+        <div>box3</div>
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    </body>
+</html>

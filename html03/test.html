@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="css/100.css">
+        <style rel="stylesheet" type="text/css">
+            @keyframes growDown {
+                0% {
+                    transform: scaleY(0)
+                }
+                80% {
+                    transform: scaleY(1.1)
+                }
+                100% {
+                    transform: scaleY(1)
+                }
+            }
+            .menu{
+                background-color: gray;
+                
+                text-align: center;
+                color: white;
+                line-height: 40px;
+            }
+
+            .menu1, .menu2, .menu3, .menu4{
+                position: relative;
+            }
+
+            .menu1:hover, .menu2:hover,
+            .menu3:hover, .menu4:hover{
+                background-color: yellow;
+                color: red;
+            }
+            div>div>div>.dropmenu{
+                display: none;
+                position: relative;
+                animation: growDown 300ms ease-in-out forwards
+            }
+            .menu1:hover div{
+                
+                display: block;
+            }
+            .menu2:hover div{
+                display: block;
+            }
+            .menu3:hover div{
+                display: block;
+            }
+            .menu4:hover div{
+                display: block;
+            }
+
+            div>div>h2{
+                margin-left: 10px;
+            }
+            div>div>p{
+                margin-left: 5px;
+            }
+
+            .content2{
+                text-align: center;
+                width: 100%;
+            }
+
+            .footer{
+                text-align: center;
+                border-top: 4px double gray;
+            }
+
+            .slider{
+                width: 100px;
+                height: 200px;
+            }
+
+            div>div>div>div>img{
+                width: 100%;
+                height: 100%;
+            }
+
+            .slides{
+                display: flex;
+                width: 100%;
+                height: 100%;
+                overflow-x: auto;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row header">
+                <div class="grid6"><img src="imgs/logo.jpg"/></div>
+                <div class="grid6">
+                    <form>
+                        <label>id</label><input type="text"/>
+                        <label>pw</label><input type="password"/>
+                        <input type="submit" value="로그인"/>
+                    </form>
+                </div>
+            </div>
+            <div class="row menu">
+                <div class="grid2">&nbsp;</div>
+                <div class="grid2 menu1">menu1
+                    <div class="dropmenu">
+                        <p><a href="#">menu1-1</a></p>
+                        <p><a href="#">menu1-2</a></p>
+                    </div>
+                </div>
+                <div class="grid2 menu2">menu2
+                    <div class="dropmenu">
+                        <p><a href="#">menu2-1</a></p>
+                        <p><a href="#">menu2-2</a></p>
+                    </div>
+                </div>
+                <div class="grid2 menu3">menu3
+                    <div class="dropmenu">
+                        <p><a href="#">menu3-1</a></p>
+                        <p><a href="#">menu3-2</a></p>
+                    </div>
+                </div>
+                <div class="grid2 menu4">menu4
+                    <div class="dropmenu">
+                        <p><a href="#">menu4-1</a></p>
+                        <p><a href="#">menu4-2</a></p>
+                    </div>
+                </div>
+                <div class="grid2">&nbsp;</div>
+            </div>
+            <div class="row content1">
+                <div class="grid12">
+                    <h2>법률</h2>
+                    <p>대통령은 법률이 정하는 바에 의하여 사면·감형 또는 복권을 명할 수 있다. 이 헌법시행 당시의 법령과 조약은 이 헌법에 위배되지 아니하는 한 그 효력을 지속한다. 이 헌법중 공무원의 임기 또는 중임제한에 관한 규정은 이 헌법에 의하여 그 공무원이 최초로 선출 또는 임명된 때로부터 적용한다. 사회적 특수계급의 제도는 인정되지 아니하며, 어떠한 형태로도 이를 창설할 수 없다.</p>
+
+                    <p>국회는 상호원조 또는 안전보장에 관한 조약, 중요한 국제조직에 관한 조약, 우호통상항해조약, 주권의 제약에 관한 조약, 강화조약, 국가나 국민에게 중대한 재정적 부담을 지우는 조약 또는 입법사항에 관한 조약의 체결·비준에 대한 동의권을 가진다. 국회의원의 선거구와 비례대표제 기타 선거에 관한 사항은 법률로 정한다.</p>
+                </div>
+            </div>
+            <div class="row content2">
+                <div class="grid4">&nbsp;</div>
+                <div class="grid4 slider">
+                    <div class="slides">
+                        <img src="imgs/daum.png" id="daum"/>
+                        <img src="imgs/naver.png" id="naver"/>
+                        <img src="imgs/google.png" id="google"/>
+                    </div>
+                </div>
+                <div class="grid4">&nbsp;</div>
+            </div>
+            <div class="row footer">
+                <div class="grid12">
+                    <address>서울특별시 서초구 서초대로74길33 비트빌 3층</address>
+                    Copyright by bitacademy co.ltd. All rights reserved. http://www.bitacademy.com
+                </div>
+            </div> 
+        </div>
+    </body>
+</html>

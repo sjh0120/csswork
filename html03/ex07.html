@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style rel="stylesheet" type="text/css">
+            body *{
+                margin: 0px;
+                padding: 0px;
+            }
+            body>div{
+                margin: 0px auto;
+                width: 800px;
+                position: relative;
+            }
+            header{
+                height: 100px;
+                text-align: center;
+            }
+            header>img{
+                float: left;
+            }
+            header>h1{
+                clear: both;
+            }
+
+            nav{
+                margin: 0px;
+                padding: 0px;
+                height: 50px;
+                background-color: gray;
+                text-align: center;
+                line-height: 50px;
+            }
+            nav>button{
+                margin-left: 20px;
+                padding: 15px;
+                border: 0px solid white;
+                background-color: gray;
+                position: relative;
+                
+            }
+            nav>button:hover .dropmenu{
+                cursor: pointer;
+                display: inline;
+            }
+
+            nav>button>a{
+                text-decoration: none;
+                color: white;
+            }
+            nav>button>div{
+                display: none;
+                position: relative;
+                top: 10px;
+            }
+            
+
+            section{
+                width: 600px;
+                height: 300px;
+                position: relative;
+            }
+            section>h2{
+                margin-top: 10px;
+                margin-left: 10px;
+                margin-bottom: 10px;
+            }
+            section>p{
+                margin-right: 10px;
+                margin-left: 5px;
+            }
+            aside{
+                width: 200px;
+                position: absolute;
+                left: 600px;
+                top: 150px;
+                
+            }
+            aside>ul>li{
+                list-style: none;
+            }
+            aside>ul>li>a{
+                display: block;
+
+                border-top: 2px solid gray;
+                border-bottom: 2px solid gray;
+
+                margin-top: 5px;
+                margin-bottom: 5px;
+                
+                text-decoration: none;
+                color: brown;
+            }
+            aside>ul>li>a>img{
+                margin-top: 10px;
+                margin-bottom: 10px;
+                width: 100%;
+            }
+
+            footer{
+                margin-top: 50px;
+                border-top: 4px double gray;
+                text-align: center;
+                
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <header>
+                <img src=imgs/logo.jpg><h1>비트 교육센트</h1>
+            </header>
+            <nav>
+                <button><a href="#">menu1</a>
+                    
+                    <div class="dropmenu">
+                        <p>test1</p>
+                        <p>test2</p>
+                    </div>
+                    
+                </button>
+                <button><a href="#">menu2</a></button>
+                <button><a href="#">menu3</a></button>
+                <button><a href="#">menu4</a></button>
+            </nav>
+            <section>
+                <h2>법률</h2>
+                <p>대통령은 법률이 정하는 바에 의하여 사면·감형 또는 복권을 명할 수 있다. 이 헌법시행 당시의 법령과 조약은 이 헌법에 위배되지 아니하는 한 그 효력을 지속한다. 이 헌법중 공무원의 임기 또는 중임제한에 관한 규정은 이 헌법에 의하여 그 공무원이 최초로 선출 또는 임명된 때로부터 적용한다. 사회적 특수계급의 제도는 인정되지 아니하며, 어떠한 형태로도 이를 창설할 수 없다.</p>
+
+                <p>국회는 상호원조 또는 안전보장에 관한 조약, 중요한 국제조직에 관한 조약, 우호통상항해조약, 주권의 제약에 관한 조약, 강화조약, 국가나 국민에게 중대한 재정적 부담을 지우는 조약 또는 입법사항에 관한 조약의 체결·비준에 대한 동의권을 가진다. 국회의원의 선거구와 비례대표제 기타 선거에 관한 사항은 법률로 정한다.</p>
+            </section>
+            <aside>
+                <ul>
+                    <li><a href="#"><img src=imgs/naver.png></a></li>
+                    <li><a href="#"><img src=imgs/google.png></a></li>
+                    <li><a href="#"><img src=imgs/daum.png></a></li>
+                </ul>
+            </aside>
+            <footer>
+                <address>서울특별시 서초구 서초대로74길33 비트빌 3층</address>
+                Copyright by bitacademy co.ltd. All rights reserved. http://www.bitacademy.com
+            </footer>
+        </div>
+
+    </body>
+</html>

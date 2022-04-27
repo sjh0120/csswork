@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style rel="stylesheet" type="text/css">
+            header{
+                overflow: hidden;
+            }
+            header>h1{
+                float: left;
+            }
+            header>form{
+                float: right;
+            }
+            header>form>p{
+                text-align: right;
+            }
+
+            nav{
+                height: 40px;
+                background-color: darkgray;
+                clear: both;
+                
+            }
+            nav>ul{
+                list-style: none;
+                padding: 0px;
+                margin: 0px auto;
+                overflow: hidden;
+                width: 360px;
+
+            }
+            nav>ul>li{
+                width: 100px;
+                margin: 0px 10px;
+                float: left;
+                height: 40px;
+               
+            }
+            
+            nav>ul>li:hover{
+                height: 200px;
+            }
+
+            nav>ul>li>a{
+                display: block;
+                height: 40px;
+                line-height: 40px;
+                text-align: center;
+                background-color: gray;
+                text-decoration: none;
+                color: white;
+                font-weight: bold;
+            }
+
+            nav>ul>li>ol{
+                list-style: none;
+                padding: 0px;
+            }
+
+            nav>ul>li>ol>li{
+                padding-top: 10px;
+                margin: 0px;
+            }
+
+            nav>ul>li>ol>li>a{
+                position: relative;
+                display: block;
+                text-decoration: none;
+                color: white;
+                font-weight: bold;
+                height: 40px;
+                background-color: gray;
+                text-align: center;
+                line-height: 40px;
+            }
+
+            footer{
+                text-align: center;
+                border-top: 4px double gray;
+            }
+            #loopImg{
+                width: 600px;
+                height: 200px;
+                overflow: hidden;
+                margin: 0px auto;
+            }
+            #loopImg>ul{
+                list-style: none;
+                padding: 0px;
+                width: 4200px;
+                animation-name: looping;
+                animation-duration: 12s;
+                animation-timing-function: linear;
+                animation-iteration-count: infinite;
+            }
+            #loopImg>ul>li{
+                float: left;
+
+            }
+            @keyframes looping {
+                from{margin-left: 0px;}
+                to{margin-left: -3600px;}
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>비트교육센터</h1>
+            <form>
+                <label>id</label><input type="text"/>
+                <label>pw</label><input type="password"/>
+                <input type="submit" value="로그인">
+                <p>처음오는 사람 일로</p>
+            </form>
+        </header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">MENU 1</a>
+                    <ol>
+                        <li><a href="#">1-1</a></li>
+                        <li><a href="#">1-2</a></li>
+                        <li><a href="#">1-3</a></li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="#">MENU 2</a>
+                    <ol>
+                        <li>2-1</li>
+                        <li>2-2</li>
+                        <li>2-3</li>
+                    </ol>
+                </li>
+                <li>
+                    <a href="#">MENU 3</a>
+                    <ol>
+                        <li>3-1</li>
+                        <li>3-2</li>
+                        <li>3-3</li>
+                    </ol>
+                </li>
+            </ul>
+        </nav>
+        <section>
+            <h2>헌법내용</h2>
+            <p>일반사면을 명하려면 국회의 동의를 얻어야 한다. 헌법재판소는 법관의 자격을 가진 9인의 재판관으로 구성하며, 재판관은 대통령이 임명한다. 국정감사 및 조사에 관한 절차 기타 필요한 사항은 법률로 정한다.</p>
+            <p>헌법에 의하여 체결·공포된 조약과 일반적으로 승인된 국제법규는 국내법과 같은 효력을 가진다. 대한민국은 국제평화의 유지에 노력하고 침략적 전쟁을 부인한다.</p>
+            <p>국회의원은 현행범인인 경우를 제외하고는 회기중 국회의 동의없이 체포 또는 구금되지 아니한다. 공무원의 직무상 불법행위로 손해를 받은 국민은 법률이 정하는 바에 의하여 국가 또는 공공단체에 정당한 배상을 청구할 수 있다. 이 경우 공무원 자신의 책임은 면제되지 아니한다.</p>
+            <p>대법원장은 국회의 동의를 얻어 대통령이 임명한다. 대통령의 임기가 만료되는 때에는 임기만료 70일 내지 40일전에 후임자를 선거한다. 탄핵결정은 공직으로부터 파면함에 그친다. 그러나, 이에 의하여 민사상이나 형사상의 책임이 면제되지는 아니한다.</p>
+        <div id="loopImg">
+            <ul>
+                <li><img src="https://dummyimage.com/600x200/000/fff&text=image1"/></li>
+                <li><img src="https://dummyimage.com/600x200/000/fff&text=image2"/></li>
+                <li><img src="https://dummyimage.com/600x200/000/fff&text=image3"/></li>
+                <li><img src="https://dummyimage.com/600x200/000/fff&text=image4"/></li>
+                <li><img src="https://dummyimage.com/600x200/000/fff&text=image5"/></li>
+                <li><img src="https://dummyimage.com/600x200/000/fff&text=image6"/></li>
+                <li><img src="https://dummyimage.com/600x200/000/fff&text=image1"/></li>
+            </ul>
+        </div>
+        </section>
+        <footer>
+            <address>서울특별시 서초구 서초대로74길33 비트빌 3층</address>
+            Copyright by bitacademy co.ltd. All rights reserved. http://www.bitacademy.com
+        </footer>
+    </body>
+</html>
