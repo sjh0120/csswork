@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            //앞선 컴파일 블럭에서 선언이 없기 때문에 호출이 되지 않는다!
+            //func01();
+            //외부파일에서 또한 마찬가지이다!
+            //외부파일을 통해 가지고 온거보다 내 코드는 밑에 있어야 한다!
+        </script>
+        <script type="text/javascript">
+            func01();
+            //호출이 선언보다 먼저있어도 동일 컴파일 스크립트 블럭이면 상관없다!
+            function func01(){
+                console.log('함수실행');
+            }
+            func01();
+        </script>
+        
+    </head>
+    <body></body>
+</html>

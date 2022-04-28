@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            var obj1={'key1':'val1','key2':'val2'};
+            console.log(typeof obj1,obj1);
+            console.log(obj1['key1'], obj1['key2']);
+            console.log('-----------------');
+            var obj2={'key1':1111,2222:'val2',true:3333,3.14:false};
+            console.log(obj2['key1'], obj2[2222], obj2[true], obj2[3.14]);
+            //2222는 배열로도 볼수있는거 아닌가? -> obj2[2222]='val2'와 유사한거 같은데
+            //자바스크립트에서 배열이 만들어지는 원리 -> object!(특수한 형태의 object)
+            //=> object의 키를 숫자로 써도 되지만 그렇게 좋지는 않음! => 편의상 문자열을 쓴다!
+
+            var a='aaaa';
+            //var obj3={'key1':'val1','key2':a, 'a':'val3'};
+            var obj3={key1:'val1',key2:a, a:'val3'};
+            //key는 숫자사용을 되도록 안할 것이므로, 키 값에 문자열표시를 안한다
+            
+
+            obj3[a]='edit3';
+            console.log(obj3);
+
+            console.log('-----------------');
+            var obj4=new Object();
+            obj4['key1']='val1';
+            obj4['key1']='edit1';
+            console.log(typeof obj4,obj4,obj4['key1'], obj4.key1);
+            //obj4['key1'], obj4.key1 같은 결과가 나옴!
+            /*
+            obj4[2222]='val1'; 이라면 키가 2222라는 말
+            그렇다면 obj4.2222를 통해서 val1이 나와야하는데 안나옴!
+            => 키값은 문자열을 쓰는게 좋다!
+            */
+            
+        </script>
+    </head>
+</html>

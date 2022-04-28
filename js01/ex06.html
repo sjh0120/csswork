@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            var a=-1;
+            if(a>0){
+                console.log('0보다 크다');
+            }else if(a<0){
+                console.log('0보다 작다');
+            }else{
+                console.log('0이다')
+            }
+            console.log('----------------');
+            var b=0;
+            //console.log(a==-1); true
+            switch(b){ // ===비교를 한다!
+                case '1':console.log('문자열'); break;
+                case 1:console.log('숫자'); break;
+                case false:console.log('참거짓'); break;
+                case a==-1:console.log('비교가 된다'); break;
+                case 0-1:console.log('연산이 된다'); break;
+                default : console.log('몰라');
+            }
+            console.log('----------------');
+            // 삼항연산자 -> 조건
+            // 조건?true:false;
+            b==0?console.log('참실행'):console.log('거짓 실행');
+            var c=b==0?1:-1;
+            console.log(c);
+            console.log('----------------');
+            for(i=0; i<5; i++){ //for(var i=0; i<5; i++){ 또한 가능
+                console.log('for i='+i);
+            }
+            console.log(i); // var i=0을 하든 그냥 i=0을 하든 i값은 5로 둘다 일치한다
+            //자바스크립트에 있어 변수는 전부 전역변수이다! cf>물론 나중에 전역변수 let이 따로 있긴 하다
+            console.log('----------------');
+            //var i=0; 없으면 i의 초기화(i=5 인상태)가 안되었기 때문에 while이 안돌아감
+            var i=0;
+            while(i<5){
+                console.log('while i='+i);
+                i++;
+            }
+            var i=0;
+            console.log('----------------');
+            do{
+                console.log("do i="+i);
+                i++;
+            }while(i<5)
+
+        </script>
+    </head>
+    <body></body>
+</html>

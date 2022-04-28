@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            var a=1111; // number -> 내부에서는 int
+            console.log(typeof a);
+            console.log("a="+a);
+            var b=3.14; // number -> 내부에서는 float
+            //자바스크립트에서는 다 number타입으로 쓴다
+            console.log(typeof b);
+            console.log("b="+b);
+            // 문자와 문자열 구분x 전부 string 타입
+            var c="문자열"; // '문자열' 또한 가능
+            console.log(typeof c);
+            console.log("c="+c);
+            var d='a'; // "a" 또한 가능
+            console.log(typeof d);
+            console.log("d="+d);
+            var e="이렇게 말합니다\n \"문자열\" 라고 합니다";
+            console.log(typeof e);
+            console.log("e="+e);
+            var e2="'문자열1'";
+            console.log(typeof e2);
+            console.log("e2="+e2);
+            var e3='"문자열2"';
+            console.log(typeof e3);
+            console.log("e3="+e3);
+            var f=true; //boolean
+            console.log(typeof f);
+            console.log("f="+f);
+            //var g=new Date(); // object
+            var g=null; // Null type object // 찍으면 object로 나오긴함
+            console.log(typeof g);
+            console.log("g="+g);
+            var h; // undefined type
+            //null 을 넣어야만 null type object이고
+            //값을 넣지 않으면 null 이 아닌 undefined type이다!
+            console.log(typeof h);
+            console.log("h="+h);
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

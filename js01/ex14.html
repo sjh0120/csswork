@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+
+            console.log(typeof func02); //-> undefined
+            /*
+            기존에 fuction func02=func01(){}을 통해서
+            window에 func02의 이름을 미리 넣어주었다.
+            그러나 밑의 
+            var func02는 이름이 없는 function을 넣어서 주었다.
+            즉 이름이 없기 때문에 func02는 선언이 되기 전까지
+            무슨 type인지를 모른다
+            => undefined이기 때문이다.
+
+            밑에서 선언을 한 후 다른곳에서 쓸 수 있었던 이유는
+            이름을 통해서 window에 먼저 넣어주었기 때문에 위에서 쓸 수 있었다.
+            그러나 이름을 통해 선언을 하지않은
+            var func02=function(){}은 window에 이름을 안 넣어 주었기 때문에
+            var func02=function(){}을 선언하기 전까지
+            func02는 undefined type이다
+
+            전역변수이다 지역변수이다
+            => window에 있는 객체 -> 전역변수
+            => 특정 메서드에 있는 객체 -> 지역변수
+            이 개념이 크다!
+            */
+
+            var func02=function(){
+                console.log('func01 run..');
+            };
+
+            //window.func01(); // this.func01(); // func01();
+            /*
+            -> key값 => func01() / value => function
+            즉 value값인 function을 var로 받을 수 있다!
+            따라서
+            var func02=function func01(){} 이 될 수 있다
+            */
+
+            console.log(typeof func02); // -> function
+            /*
+            var func02=function func01(){}에서 func01은 함수 호출을 위해서 필요한 이름
+            func02를 통해서 함수를 호출 할 수 있으므로 func01은 생략가능
+            즉
+            var func02=function(){}이 가능하다
+            이휴 -> func02는 function 타입이기 때문!
+            var func02=function(){} => 익명클래스
+            */
+
+            function func03(a){
+                // func03의 매게변수로 func02를 주었기 때문에 a는 실행이 가능하다!
+                // 즉 a는 callback 함수이다
+                a();
+
+                // func02가 실행하는 것이 아니라 func03이 실행
+                // func02가 언제 실행될지 모른다!
+                // 다른사람이 func02를 작성해두고 나는 단순 func02는 버튼을 눌렀을 때 실행하기만 하면 될때
+                // 이럴 때 사용된다
+                // func02를 몰라도 되고 단순 버튼이 눌러졌을때 func02를 실행하기만 하면 되기 때문에 사용되는 코드
+            }
+
+            //func03(func02);
+
+            function func04(){
+                // 클로져 - 변수의 라이프사이클을 뛰어넘어섬
+                var z=1111;
+                return (function(){
+                    console.log('지역변수에서 선언된 함수'+z);
+                    return z;
+                })();
+            }
+
+            var after=func04; // after은 func04()를 실행하는 버튼과 같은 개념
+            //return 자체가 (); 실행이므로
+            //var after=func04;가 가능
+            //return이 실행이 아니라면
+            //var after=func04();가 되어야함
+            var z=2222;
+            var w=after();
+            console.log(w,z);
+            /*
+            var w는 after()을 통해 실행된 func04 안의 지역변수 z이다.
+            원래 지역변수라면 함수가 호출되고 끝나면 없어져야하지만
+            클로져를 통해 변수의 라이프사이클을 뛰어넘었기 때문에
+            w를 통해 func04안의 z 지역변수는 살아있을 수 있다.
+            */
+
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+//function 함수이름(매개변수){실행문;}
+//모든 function은 return을 갖는다. 그러나 return이 없어도 된다
+function func01(){
+    console.log('함수실행');
+    return;
+}
+function func02(){
+    console.log('func2 run...');
+    return 1234;
+}
+function func03(a){
+    console.log('param:' + a);
+}
+function func04(a,b){
+    console.log('param1:'+a+",param2:"+b);
+}
+function func03(){
+    console.log('오버로드는 안됨, 단 덮어씀');
+}
+
+var a=func01(); // return값이 없으면 에러아닌가? => undefined로 return 된다
+console.log(a);
+console.log('----------------');
+var b=func02();
+console.log(b);
+console.log('----------------');
+func03();
+func03(1111);//매개변수가 없는걸로 덮어썻지만 상관없음
+//func03(){}를 통해 새로 메서드를 만들면 덮어씀! (오버라이드는 또 아님! / 단순 덮어쓰기)
+console.log('----------------');
+func04(1111,2222);
+console.log('----------------');
+func04(1111);//안주면 undefined 자바스크립트에 있어서는 동일명 메서드(오버로드)가 지원되지 않는다! 변수형이 var 뿐이기 때문이다
+console.log('----------------');
+
+
+        </script>
+    </head>
+    <body></body>
+</html>

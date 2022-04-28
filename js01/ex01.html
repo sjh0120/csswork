@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="js/test01.js">/*
+            //이부분은 브라우저마다 다르며 틀린문법! 쓰지말기!
+            //자바스크립트 더 쓰고 싶으면 자바스크립트 더 만들어서 사용하기
+            document.write("내부에서 작성");
+        */</script>
+        <script type="text/javascript">
+            document.write("추가");
+            /*
+            외부 자바스크립트는 바로 닫아줘야하며 중간에 어떠한것도 들어가면 안된다!
+            또한 <스크립트 />를 통해 한번에 닫는거도 지원안해준다!
+            */
+        </script>
+        <script type="text/javascript">
+            /*
+            <script><//script>하나당 한개의 컴파일 블럭이라고 생각하기
+            즉, 이 스크립트 안에는 a에 대한 선언이 없기 때문에 컴파일 실패
+            따라서 실행이 안된다
+            */
+            document.write("<h1>자바스크립트로 작성"+a+"</h1>");
+        </script>
+        <script type="text/javascript">
+            //여기에 작성
+            var a=1234;
+            document.write("<h2>자바스크립트로 작성"+a+"</h2>");
+        </script>
+        <script type="text/javascript">
+            /*
+            이 스크립트 블럭 또한 실행 x => 밑에 a는 선언되어 있지만 위에write1로 틀렸기 때문에
+            컴파일 실패 => 실행 x
+            */
+            document.write1("<h1>자바스크립트로 작성</h1>");
+            var a=1234;
+            document.write("<h2>자바스크립트로 작성"+a+"</h2>");
+        </script>
+        <script type="text/javascript">
+            console.log("추가1");
+        </script>
+    </head>
+    <body>
+        <h1>html로 작성</h1>
+    </body>
+</html>
