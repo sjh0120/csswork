@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            console.log(
+                screen.width,
+                screen.height,
+                screen.availWidth,
+                screen.availHeight,
+                screen.colorDepth,
+                screen.pixelDepth
+            );
+            console.log(
+                navigator.appName,
+                navigator.appCodeName,
+                navigator.platform
+            );
+            console.log(navigator.appVersion);
+            //navigator : 지금 사이트에 어떤 브라우저로 접속했는지 알려주는 역할
+            //window.location.replace : 히스토리를 안남기는 이동
+            //네이버 -> 네이버 자바 검색 -> href=구글 => 뒤로가기 -> 네이버 자바 검색페이지
+            //ㄴ> href 단순 페이지 이동 => property 이동
+            //네이버 -> 네이버 자바 검색 -> replace=구글 => 뒤로가기 -> 네이버 원래페이지
+            //ㄴ> replace history를 남기지 않고 이동! => 메서드 이동
+            // => 로그인 부분에서 잘 써야할듯! 뒤로가기해서 로그인정보가 남으면 안되기 때문!
+            //window.history.go(-2); => 뒤로가기 2번 window.history.go(2) => 앞으로가기 2번
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

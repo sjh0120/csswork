@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style rel="stylesheet" type="text/css">
+            div{
+                width: 600px;
+                overflow: hidden;
+                margin: 0px auto;
+            }
+            div>ul{
+                width: 3600px;
+                height: 400px;
+                padding: 0px;
+            }
+            
+            div>ul>li{
+                float: left;
+                width: 600px;
+                height: 400px;
+                list-style: none;
+                display: block;
+                margin: 0px;
+                padding: 0px;
+            }
+        
+        </style>
+        
+    </head>
+    <body>
+        <div>
+            <ul>
+                <li><img src="https://dummyimage.com/600x400/000/fff&text=1"></li>
+                <li><img src="https://dummyimage.com/600x400/000/fff&text=2"></li>
+                <li><img src="https://dummyimage.com/600x400/000/fff&text=3"></li>
+            </ul>
+        </div>
+        <script type="text/javascript">
+            var ul=document.children[0].children[1].children[0].children[0];
+            setInterval(function(){
+                ul.appendChild(ul.firstElementChild);
+            },1000);
+        </script>
+    </body>
+</html>

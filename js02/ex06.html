@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            function Func1(){
+                this.num1=1111;
+                this.func=function(){console.log('메서드');};
+                console.log('실행',this);
+            }
+
+            Func1();//앞글자 대문자 function은 객체를 찍어내는 function이므로
+            //실질적으로 현업에서는 Func1();과 같은 직접호출을 잘 사용하지 않는다!
+            console.log(window.num1);//대문자 Window는 function 이므로 소문자로 잘해야함!
+            var obj1=new Func1();//자바의 클래스를 통한 객체를 찍어내는 기능을 function을 통해 찍어낸다
+            console.log(obj1.num1);
+            obj1.func();
+            /*
+            Func1();과 var obj1=new Func1();의 window 수준이
+            다르기 때문에 Func1();만 쓰는 것은 window 수준이 꼬이기 때문에
+            쓰지 않는게 좋음
+            */
+        </script>
+
+    </head>
+</html>

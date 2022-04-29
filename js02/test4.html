@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+    </head>
+
+    <body>
+
+    </body>
+<script type="text/javascript">
+    var img = document.createElement('img');
+    img.style.display = 'block';
+    img.style.margin = '0px auto';
+    var imgs = ['imgs/bg.jpg', 'imgs/car.jpg', 'imgs/daum.png', 'imgs/google.png', 'imgs/index.png', 'imgs/naver.png']
+    var i = 0;
+    document.firstElementChild.lastElementChild.appendChild(img);
+    var callback1 = function () {
+        img.src = imgs[i];
+        i++;
+        if (i == 6) {
+            i = 0;
+        }
+    }
+    window.setInterval(callback1, 1000)
+    console.log(qs);
+</script>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            var boo1=true;
+            var boo2=new Boolean(true);//디폴트는 false
+            console.log(boo2);
+            var func1=function(){
+                /*
+                var func2=function(){ // -> typeof = undefined
+                    console.log('func2');
+                    console.log('',typeof func2);
+                }();
+                */
+               function func2(){
+                   console.log('func2');
+                };
+                func2();
+               console.log(typeof func2);// typeof func2 =function
+            };
+            func1();
+            console.log(typeof func1);
+            console.log(typeof func2);// typeof func2=undefined
+            //function func2(){}; -> typeof = function
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
