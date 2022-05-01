@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+        <nav>
+            <ul>
+                <li><a href="intro.jsp">소개</a></li>
+                <li><a href="#">작품 전시회</a>
+                    <ol>
+                        <li><a href="#">작품 1</a></li>
+                        <li><a href="#">작품 2</a></li>
+                        <li><a href="#">작품 3</a></li>
+                    </ol>
+                </li>
+                <li><a href="#">게시판</a>
+                    <ol>
+                        <li><a href="#">홈페이지</a></li>
+                        <li><a href="#">작품관련</a></li>
+                    </ol>
+                </li>
+            </ul>
+        </nav>

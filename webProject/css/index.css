@@ -1,0 +1,123 @@
+@media screen and (min-width:601px){
+    .main_body{
+        padding: 0px;
+        margin: 0px;
+        width: 100%;
+        height: 800px;
+    }
+    .contents{
+        display: block;
+        float: left;
+        width: 59%;
+        height: 100%;
+        padding: 0px;
+        margin: 0px;
+    }
+    
+    section{
+        margin: 3px 0px 0px 3px;
+        padding: 0px;
+        display: block;
+        height: 59%;
+        width: 99%;
+        
+        background-color: red;
+    }
+    section>*, article>*{
+        margin: 0px;
+        padding: 0px;
+    }
+    article{
+        height: 39%;
+        width: 99%;
+        padding: 0px;
+        margin: 3px 0px 0px 3px;
+        background-color: aqua;
+    }
+    
+    aside{
+        float: right;
+        margin: 3px 0px 3px 3px;
+        padding: 0px;
+        display: block;
+        width: 40%;
+        height: 99%;
+        background-color: blue;
+    }
+    aside>*{
+        margin: 0px;
+        padding: 0px;
+    }
+    .contents ,aside{
+        display: inline-block;
+    }
+}
+@media screen and (max-width:600px){
+    .main_body{
+        padding: 0px;
+        margin: 0px;
+        width: 100%;
+        height: 800px;
+        background-color: green;
+    }
+    .contents{
+        display: block;
+        width: 100%;
+        height: 80%;
+        padding: 0px;
+        margin: 0px;
+    }
+    
+    section{
+        margin: 0px;
+        padding: 0px;
+        display: block;
+        height: 60%;
+        width: 100%;
+        
+        background-color: red;
+        overflow: auto;
+    }
+    section>*, article>*{
+        margin: 0px;
+        padding: 0px;
+    }
+    article{
+        height: 40%;
+        width: 100%;
+        padding: 0px;
+        margin: 0px;
+        background-color: aqua;
+        
+        overflow: auto;
+    }
+    aside{
+        margin: 0px;
+        padding: 0px;
+        display: block;
+        width: 100%;
+        height: 20%;
+        background-color: blue;
+        
+        overflow: auto;
+    }
+    aside>*{
+        margin: 0px;
+        padding: 0px;
+    }
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+footer{
+    border-top: 4px double gray;
+    text-align: center;
+    font-weight: bold;
+    min-height: 80px;
+    line-height: 30px;
+    background-color: bisque;
+    
+}

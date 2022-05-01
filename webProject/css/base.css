@@ -1,0 +1,14 @@
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+footer{
+    border-top: 4px double gray;
+    text-align: center;
+    font-weight: bold;
+    min-height: 80px;
+    line-height: 30px;
+    background-color: bisque;
+    
+}
