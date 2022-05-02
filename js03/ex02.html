@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+    </head>
+    <body>
+        <h1>element selecting</h1>
+        <p>선택자</p>
+        <h2 id="id1">제목</h2>
+        <p class="cl1">내용</p>
+        <h2 class="cl2">제목</h2>
+        <p class="cl1 cl2">내용</p>
+        <h2 class="cl3">제목</h2>
+        <p class="cl2">내용</p>
+        <!--
+            document.getElementById('아이디'); -> 아이디는 1개의 문서에 오직 1개 이므로 1개의 태그형태로 나옴
+            document.getElementsByClassName('클래스'); -> 클래스는 여러개 일 수 있으므로 1개 이더라도 배열형태로 결과가 나옴
+            document.getElementsByTagName('태그'); -> 마찬가지로 태그 또한 여러개 일 수 있으므로 배열형태로 결과가 나옴
+            정확히는 collection이라 유사배열이다
+            document.getElementById('id1').style.color='red'; 는 태그로 1개이므로 가능
+            document.getElementsByClassName('cl1').style.color='blue'; 는 유사배열이므로 불가능! 1개씩 빼야만 가능!
+            for(ele of document.getElementsByClassName('cl1')) ele.style.color='blue'
+            유사배열이라 안되는 기능은 많지만 for-of는 지원한다
+        -->
+        <ul>
+            <li>item1</li>
+            <li>item2</li>
+            <li>item3</li>
+            <li>item4</li>
+            <li>item5</li>
+            <li>item6</li>
+            <li>item7</li>
+        </ul>
+        <script type="text/javascript">
+            var id01=document.getElementById('id1');
+            var cl01=document.getElementsByClassName('cl1');
+            cl01[0].style.color='red';
+
+            var lis=document.getElementsByTagName('li');
+            console.log(lis.length);
+        </script>
+    </body>
+</html>

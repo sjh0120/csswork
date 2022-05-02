@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <div>
+            <ul>
+                <li><img src="https://dummyimage.com/600x400/000/fff&text=1"></li>
+                <li><img src="https://dummyimage.com/600x400/000/fff&text=2"></li>
+                <li><img src="https://dummyimage.com/600x400/000/fff&text=3"></li>
+                <li><img src="https://dummyimage.com/600x400/000/fff&text=4"></li>
+                <li><img src="https://dummyimage.com/600x400/000/fff&text=5"></li>
+                <li><img src="https://dummyimage.com/600x400/000/fff&text=6"></li>
+            </ul>
+        </div>
+        <script type="text/javascript">
+            var ul=document.querySelector('ul');
+            var imgs=ul.querySelectorAll('img');
+            var arr=[];
+            imgs.forEach(function(ele){
+                arr.push(ele.src);
+            });
+
+            // var cnt=0;
+
+            function loopImg(){
+                var img=arr.shift();
+                
+                ul.innerHTML='<li><img src="'+img+'"/></li>';
+                arr.push(img);
+                //cnt++;
+                //if(cnt==6){cnt=0;}
+                setTimeout(loopImg,1000);
+            }
+            loopImg();
+
+
+            // setInterval(function loopImg(){
+            //     ul.innerHTML='<li><img src="'+arr[cnt]+'"/></li>';
+            //     cnt++;
+            //     if(cnt==6){cnt=0;}
+            // },1000);
+            
+            
+            
+        </script>
+    </body>
+</html>

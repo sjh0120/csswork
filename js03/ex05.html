@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style rel="stylesheet" type="text/css">
+            #target{
+                background-color: aqua;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>use Text</h1>
+        <h2>edit</h2>
+        <div id="target">
+            <ul>
+                <li>item1</li><!--주석, 공백은?-->
+            <li>item2</li>
+                <li>item3</li>
+                <li>item4</li>
+            </ul>
+        </div>
+        <script type="text/javascript">
+            console.log(document.querySelector('h1').innerText);
+            //document.querySelector('h1').innerText='h1태그 <a href="#">문자열</a> 수정'; // 태그 처리 안됨
+            document.querySelector('h1').innerHTML='h1태그 <a href="#">문자열</a> 수정'; // 태그 처리됨
+
+            var ul=document.querySelector('#target>ul');
+            console.log(ul.innerText); // 태그빼고 텍스트 노드들만 받아옴
+            console.log(ul.innerHTML); // 태그 까지 같이 다 받아옴
+            console.log(ul.outerText);
+            console.log(ul.outerHTML); // 자기자신 ul까지 받아옴
+            //ul.outerHTML='<ol><li>item1</li><li>item2</li><li>item3</li></ol>'
+            //outerHTML은 자기자신 ul까지 받아오기 때문에 ol로 바꿔줄수도 있다!
+            //ul.innerHTML='<li>item5</li>';
+            //해버리면 item5만 나오기 때문에 기존 내용 또한 받아와야만 함
+            //ul.innerHTML=ul.innerHTML+'<li>item5</li>';
+            ul.outerHTML='<a href="#">add</a>'+ul.outerHTML;
+            
+        </script>
+    </body>
+</html>

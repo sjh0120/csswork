@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+    </head>
+    <body>
+        <h1>html5 추가 기능</h1>
+        <p>선택자</p>
+        <h2 id="id1">제목</h2>
+        <p class="cl1">내용</p>
+        <h2 class="cl2">제목</h2>
+        <p class="cl1 cl2">내용</p>
+        <h2 class="cl3">제목</h2>
+        <p class="cl2">내용</p>
+        
+        <ul>
+            <li>item1</li>
+            <li>item2</li>
+            <li>item3</li>
+            <li>item4</li>
+            <li>item5</li>
+            <li>item6</li>
+            <li>item7</li>
+        </ul>
+        <script type="text/javascript">
+            var id01=document.querySelector('#id1');
+            var h1=document.querySelector('h1');
+            var h2=document.querySelectorAll('h2');
+            var cl02=document.querySelectorAll('.cl2');
+            var cl01=document.getElementsByClassName('cl1');
+            cl01[0].style.color='red';
+
+            var lis=document.getElementsByTagName('li');
+            console.log(lis.length);
+        </script>
+    </body>
+</html>

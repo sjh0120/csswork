@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript">
+            window.onload=function(){
+                var input=document.querySelector('input');
+                input.onkeydown=function(e){
+                    console.log('down',e.key, e.keyCode, input.value, e.target.value, this.value);//빠른퍼포먼스 / 누르고 있는 동안 계속 작동
+                };
+                //input.value는 한박자 늦음 따라서 up을 통해서 값을 받아야 중복도 막고 값을 제대로 받아올 수 있음
+                //이때의 this는 input
+                //나중에는 e.target.value, this.value를 제일 많이 씀
+                //input을 통해서 메서드를 돌리면 callback함수에서 많이 걸린다...?
+                input.onkeyup=function(e){
+                    console.log('up',e.key, e.keyCode, input.value, e.target.value, this.value);//누룬키에 대한 정확한 값을 받아옴
+                };
+                input.onkeypress=function(e){
+                    console.log('press',e.key, e.keyCode, input.value, e.target.value, this.value);//최종적인 퍼포먼스 / 땟을 때 작동
+                };
+
+                /*
+                input 박스에 포커싱이 되어져서 input박스를 선택하고 입력해야한다
+                h1 태그나 다른 태그에도 키 이벤트를 줄 수 있음
+                그러나 h1 태그와 같은 태그에는 포커싱을 갖을 수 없기 때문에 작동을 하지 않는다!
+                input 포커싱 -> 깜빡이
+                버튼 포커싱 -> 버튼 주위 점선(옛날 버튼 디자인 생각하기)
+                그렇다면 포커싱을 선택을 통해서 하는 것이 아닌 바로 입력받도록 하려면?
+                window에 키 이벤트를 주면된다
+                
+                */
+            }
+        </script>
+    </head>
+    <body>
+        <h1>키 이벤트</h1>
+        <input type="text"/>
+    </body>
+</html>

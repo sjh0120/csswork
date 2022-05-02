@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style rel="stylesheet" type="text/css">
+            .area{
+                width: 600px;
+                height: 400px;
+                overflow: hidden;
+                margin: 0px auto;
+                
+            }
+            .slider{
+                width: 3600px;
+                height: 400px;
+            }
+            div>div>ul{
+                padding: 0px;
+                margin: 0px;
+            }
+            div>div>ul>li{
+                list-style: none;
+                float: left;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="area">
+            <div class="slider">
+                <ul>
+                <script type="text/javascript">
+                    /*
+                    var arr=['imgs01','imgs02','imgs03','imgs04','imgs05','imgs06'];
+                    for(var i=0; i<arr.length; i++){
+                        var li=document.createElement('li');
+                        var img=document.createElement('img');
+                        img.src='https://dummyimage.com/600x400/000/fff&text='+arr[i];
+                        li.appendChild(img);
+                        var ul=document.querySelector('ul');
+                        ul.appendChild(li);
+                    }
+
+                    setInterval(function(){
+                        ul.appendChild(ul.firstElementChild);
+                    },1000);
+                    */
+                    var arr=['imgs01','imgs02','imgs03','imgs04','imgs05','imgs06'];
+                    for(var i=0; i<arr.length; i++){
+                        var li=document.createElement('li');
+                        function newEle(srctxt, li){
+                            srctxt='https://dummyimage.com/600x400/000/fff&text='+arr[i];
+                            var img=document.createElement('img');
+                            img.src=srctxt;
+                            li.appendChild(img);
+                            return li;
+                        }
+                        var ul=document.querySelector('ul');
+                        
+                        ul.appendChild(li);
+                    }
+
+                    setInterval(function(){
+                        ul.appendChild(ul.firstElementChild);
+                    },1000);
+                    
+                </script>
+                </ul>
+            </div>
+        </div>
+        <script type="text/javascript">
+            /*
+            var ul=document.querySelector('ul');
+            var li=document.querySelectorAll('li');
+
+            var arr=['imgs01','imgs02','imgs03','imgs04','imgs05','imgs06'];
+            for(var i=0; i<arr.length; i++){
+                var li=document.createElement('li');
+                var img=document.createElement('img');
+                img.src='https://dummyimage.com/600x400/000/fff&text='+arr[i];
+                li.appendChild(img);
+                ul.appendChild(li);
+            }
+
+            setInterval(function(){
+                ul.appendChild(ul.firstElementChild);
+            },1000);
+            */
+        </script>
+        
+    </body>
+</html>
