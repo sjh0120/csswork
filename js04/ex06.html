@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style rel="stylesheet" type="text/css">
+        nav{
+            background-color: gray;
+            height: 50px;
+        }
+        nav>ul{
+            list-style: none;
+            padding: 0px;
+            margin: 0px auto;
+        }
+        nav>ul>li{
+            width: 100px;
+            height: 50px;
+            float: left;
+            margin: 0px 1px;
+            
+        }
+        nav>ul>li>a{
+            display: block;
+            height: 50px;
+            background-color: darkgray;
+            text-decoration: none;
+            line-height: 50px;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+        }
+        nav>ul>li>ol{
+            list-style: none;
+            padding: 0px;
+        }
+        nav>ul>li>ol>li{
+            width: 100px;
+            height: 50px;
+        }
+        nav>ul>li>ol>li>a{
+            border-top: 1px solid white;
+            height: 49px;
+            text-decoration: none;
+            text-align: center;
+            display: block;
+            height: 50px;
+            background-color: darkgray;
+            color: white;
+            font-weight: bold;
+            line-height: 49px;
+        }
+    </style>
+    <script type="text/javascript">
+        var mn1,mn2,mn3,mn4;
+        
+        window.onload=function(){
+            var lis=document.querySelectorAll('ul>li');
+            
+            var ul=document.querySelector('nav>ul');
+            ul.style.width=102*+lis.length+'px';
+
+            var hide=function(arr){
+                arr.forEach(function(ele){
+                    ele.querySelector('ol').style.display='none';
+                });
+            };
+
+            hide(lis);
+            
+            lis.forEach(function(ele){
+                ele.onclick=function(){
+                    if(ele.querySelector('ol').style.display=='none'){
+                        ele.querySelector('ol').style.display='block';
+                    }else{
+                        ele.querySelector('ol').style.display='none';
+                    }
+                    return false;
+                };
+                // ele.onmouseenter=function(e){
+                //     //e.preventDefault();
+                //     //e.stopPropagation();
+                //     ele.querySelector('ol').style.display='block';
+                //     return false;
+                // };
+                ele.onmouseleave=function(){
+                    ele.querySelector('ol').style.display='none';
+                }
+            });
+
+        /*
+        //1번 코드
+        var mn1,mn2,mn3,mn4;
+        window.onload=function(){
+            
+            var mn1=document.querySelectorAll('ul>li')[0];
+            var mn2=document.querySelectorAll('ul>li')[1];
+            var mn3=document.querySelectorAll('ul>li')[2];
+            var mn4=document.querySelectorAll('ul>li')[3];
+            mn1.querySelector('ol').style.display='none';
+            mn2.querySelector('ol').style.display='none';
+            mn3.querySelector('ol').style.display='none';
+            mn4.querySelector('ol').style.display='none';
+
+            //클릭
+            mn1.querySelector('a').onclick=function(e){
+                if(mn1.querySelector('ol').style.display=='none'){
+                    mn1.querySelector('ol').style.display='block';
+                    mn2.querySelector('ol').style.display='none';
+                    mn3.querySelector('ol').style.display='none';
+                    mn4.querySelector('ol').style.display='none';
+                }else
+                    mn1.querySelector('ol').style.display='none'
+                return false;
+            }
+            mn2.querySelector('a').onclick=function(e){
+                if(mn2.querySelector('ol').style.display=='none'){
+                    mn1.querySelector('ol').style.display='none';
+                    mn2.querySelector('ol').style.display='block';
+                    mn3.querySelector('ol').style.display='none';
+                    mn4.querySelector('ol').style.display='none';
+                }else
+                    mn2.querySelector('ol').style.display='none'
+                return false;
+            }
+            mn3.querySelector('a').onclick=function(e){
+                if(mn3.querySelector('ol').style.display=='none'){
+                    mn1.querySelector('ol').style.display='none';
+                    mn2.querySelector('ol').style.display='none';
+                    mn3.querySelector('ol').style.display='block';
+                    mn4.querySelector('ol').style.display='none';
+                }else
+                    mn3.querySelector('ol').style.display='none'
+                return false;
+            }
+            mn4.querySelector('a').onclick=function(e){
+                if(mn4.querySelector('ol').style.display=='none'){
+                    mn1.querySelector('ol').style.display='none';
+                    mn2.querySelector('ol').style.display='none';
+                    mn3.querySelector('ol').style.display='none';
+                    mn4.querySelector('ol').style.display='block';
+                }else
+                    mn4.querySelector('ol').style.display='none'
+                return false;
+            }
+            //클릭 끝
+            */
+        }
+    </script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a href="#">menu1</a>
+                <ol>
+                    <li><a href="#">menu1-1</a></li>
+                    <li><a href="#">menu1-2</a></li>
+                    <li><a href="#">menu1-3</a></li>
+                    <li><a href="#">menu1-1</a></li>
+                </ol>
+            </li>
+            <li>
+                <a href="#">menu2</a>
+                <ol>
+                    <li><a href="#">menu2-1</a></li>
+                    <li><a href="#">menu2-2</a></li>
+                    <li><a href="#">menu2-3</a></li>
+                    <li><a href="#">menu2-1</a></li>
+                </ol>
+            </li>
+            <li>
+                <a href="#">menu3</a>
+                <ol>
+                    <li><a href="#">menu3-1</a></li>
+                    <li><a href="#">menu3-2</a></li>
+                    <li><a href="#">menu3-3</a></li>
+                    <li><a href="#">menu3-1</a></li>
+                </ol>
+            </li>
+            <li>
+                <a href="#">menu4</a>
+                <ol>
+                    <li><a href="#">menu4-1</a></li>
+                    <li><a href="#">menu4-2</a></li>
+                    <li><a href="#">menu4-3</a></li>
+                    <li><a href="#">menu4-1</a></li>
+                </ol>
+            </li>
+            <li>
+                <a href="#">menu5</a>
+                <ol>
+                    <li><a href="#">menu5-1</a></li>
+                    <li><a href="#">menu5-2</a></li>
+                    <li><a href="#">menu5-3</a></li>
+                    <li><a href="#">menu5-1</a></li>
+                </ol>
+            </li>
+        </ul>
+    </nav>
+    
+</body>
+</html>

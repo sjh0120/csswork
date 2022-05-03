@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--옛날 edge브라우저가 인코딩 지원을 안해줘서 작성하는 코드 / 익스플로러 11 지원을 종료하기 전까지 사용해야함-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--디바이스 크기에 맞추서 content의 크기를 바꿔주는 코드 / 반응형웹의 기본!-->
+    <title>Document</title>
+    <script type="text/javascript">
+        window.onload=function(){
+            var btns=document.querySelectorAll('button');
+            var input=document.querySelector('input');
+            var select=document.querySelector('select');
+            
+            var callback01=function(e){
+                //console.log('event 발생',this,e.target);
+                // console.log('event 발생',e.type);
+                console.log('event 발생',e.type, this.value);
+            };
+            /*마우스 이벤트*/
+            // btns[0].addEventListener('click',callback01);
+            // btns[0].addEventListener('dblclick',callback01);
+            // btns[0].addEventListener('mousedown',callback01);
+            // btns[0].addEventListener('mouseup',callback01);
+            // btns[0].addEventListener('mouseover',callback01);
+            // btns[0].addEventListener('mouseout',callback01);
+            // btns[0].addEventListener('mouseenter',callback01);
+            // btns[0].addEventListener('mouseleave',callback01);
+            // btns[0].addEventListener('mousemove',callback01); // document로 바꿔서확인해보면 더 좋음
+
+            /*키보드 이벤트*/
+            // input.addEventListener('keydown',callback01);
+            // input.addEventListener('keypress',callback01);
+            // input.addEventListener('keyup',callback01);
+
+            /*형태변화 이벤트*/
+            // input.addEventListener('change',callback01); // 키보드 엔터
+            // select.addEventListener('change',callback01); //select 왜 안나오지
+            // input.addEventListener('focus',callback01);  //포커스
+            // input.addEventListener('blur',callback01);   //포커스 빠질때
+            // input.addEventListener('focusin',callback01);//포커스 블러보다
+            // input.addEventListener('focusout',callback01);//포크스 in out 위주로 사용하기!
+            // document.addEventListener('scroll',callback01);//스크롤 발생시마다 발동
+            
+            var callback02=function(e){
+                console.log(e.target.innerHTML);
+            };
+            var callback03=function(e){
+                btns[1].removeEventListener('click',callback02);
+                //클릭 이벤트 여러개 중 어떤 콜백을 기반으로 작동하는 이벤트리스너를 지울지 결정해줘야함
+                //btns[1].removeEventListener('click',function(){}); 이런식으로 DOM level3 코드를 작성하면
+                //click 이벤트중 어떤것을 지울지 모름! -> 에러발생가능! => 주의하기!
+                //따라서 이벤트리스너의 콜백함수는 무조건 밖에 정의하기! 익명함수 정의 x
+            };
+            var callback04=function(e){
+                console.log('단 한번 수행하는 이벤트');
+                this.removeEventListener('click',callback04);
+            };
+            btns[1].addEventListener('click',callback02);
+            btns[2].addEventListener('click',callback03);
+            btns[3].addEventListener('click',callback04);
+        }
+    </script>
+</head>
+<body>
+    <h1>event</h1>
+    <button>btn1</button>
+    <button>btn2</button>
+    <button>btn3</button>
+    <button>btn4</button>
+    <input type="text"/>
+    <div>box</div>
+    <select>
+        <option>선택하세요</option>
+    </select>
+    <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+</body>
+</html>

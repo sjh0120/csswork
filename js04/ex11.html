@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        var xhr, data;
+        var msg='';
+        var callback01=function(){
+            if(xhr.readyState==4 && xhr.status==200){
+                //data=xhr.responseXML;
+
+                //xml파일에 있는 내용을 text로 전부 작성하는것! -> 말도안되게 안좋은 코드
+                //data=xhr.responseText;
+                //document.querySelector('div').innerHTML=data;
+
+                //div에 가공해서 넣는다 => div에 말고 document에 넣자
+                // data=xhr.responseText;
+                // document.querySelector('div').innerHTML=data;
+                // var arr=document.querySelector('div').getElementsByTagName('student');
+                // console.log(arr);
+
+                //document 안의 div를 만들었지만 배치를 안했기 때문에 문제가 없음!
+                // data=xhr.responseText;
+                // var temp=document.createElement('div');
+                // temp.innerHTML=data;
+                // var arr=temp.getElementsByTagName('student');
+                // console.log(arr);
+
+                //더 심한경우
+                //다 텍스트로 받아와서 innerHTML에 테이블형태로 바꾸어서 입력한다
+                data=xhr.responseText;
+                data=data.replaceAll('students','table')
+                    .replaceAll('student','tr')
+                    .replaceAll('num','td')
+                    .replaceAll('name','td')
+                    .replaceAll('kor','td')
+                    .replaceAll('eng','td')
+                    .replaceAll('math','td');
+
+                var temp=document.createElement('div');
+                temp.innerHTML=data;
+                document.querySelector('tbody').innerHTML=temp.querySelector('table').innerHTML;
+                console.log(data);
+
+            }
+        };
+        
+        function getList(){
+            xhr=new XMLHttpRequest();
+            xhr.onreadystatechange=callback01;
+            xhr.open('get','ex08.xml');
+            xhr.send();
+            
+        };
+
+        
+        window.onload=function(){
+            document.querySelector('button').onclick=function(){
+                getList();
+            };
+        }
+        
+
+    </script>
+</head>
+<body>
+    <h1>학생 성적 관리 프로그램</h1>
+    <button>불러오기</button>
+    <table>
+        <thead>
+            <tr>
+                <th>학번</th>
+                <th>이름</th>
+                <th>국어</th>
+                <th>영어</th>
+                <th>수학</th>
+            </tr>
+        </thead>
+        <tbody>
+            <div>
+            </div>
+        </tbody>
+    </table>
+</body>
+</html>
+
+
+<!--
+비동기 통신 -> 검색엔진에 키워드를 검색할 때 1글자를 입력할 때마다 
+밑에 추천 검색어가 계속해서 나오는 것 => ajax 통신
+
+만약 한글자씩 입력할 때마다 페이지를 이동하면 너무 불편
+-> 비동기 통신이 나옴
+=> 요즘의 웹엡들 => 하이브리드 통신사용
+-->

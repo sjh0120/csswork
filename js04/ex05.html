@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style rel="stylesheet" type="text/css">
+        div{
+            width: 300px;
+            height: 300px;
+            background-color: aqua;
+        }
+        div>div{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+        div>div>div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+    <script type="text/javascript">
+        var box1,box2,box3;
+        window.onload=function(){
+            box1=document.querySelectorAll('div')[0];
+            box2=document.querySelectorAll('div')[1];
+            box3=document.querySelectorAll('div')[2];
+
+            /*버블링
+            box1.addEventListener('click',function(){
+                console.log('box1');
+            });
+            box2.addEventListener('click',function(){
+                console.log('box2');
+            });
+            box3.addEventListener('click',function(){
+                console.log('box3');
+            });
+            //3 -> 2 -> 1 순서로 나옴
+            */
+
+            /*캡처링
+            box1.addEventListener('click',function(){
+                console.log('box1');
+            },true);
+            box2.addEventListener('click',function(){
+                console.log('box2');
+            },true);
+            box3.addEventListener('click',function(){
+                console.log('box3');
+            },true);
+            //1 -> 2 -> 3 순서로 나옴
+            */
+            
+            /*
+            그렇다면 이벤트 전파를 막으려면?
+            box3 누르면 123, 321 뜨지말고 3만 뜨도록!
+            */
+            /*이벤트 전파 막기(정석)*/
+            box1.addEventListener('click',function(e){
+                e.stopPropagation();
+                console.log('box1');
+            });
+            box2.addEventListener('click',function(e){
+                e.stopPropagation();
+                console.log('box2');
+            });
+            box3.addEventListener('click',function(e){
+                e.stopPropagation(); // 이벤트 전파금지!
+                //e.stopPropagation();에 따라 다름!
+                console.log('box3');
+            });
+
+            /*캡처링에서 전파 막기*/
+            // box1.addEventListener('click',function(e){
+            //     console.log('box1');
+            // },true);
+            // box2.addEventListener('click',function(e){
+            //     e.stopPropagation();// 이벤트 전파금지!
+            //     console.log('box2');
+            // },true);
+            // box3.addEventListener('click',function(e){
+            //     e.stopPropagation(); // 이벤트 전파금지!
+            //     //(캡처링 모드)box2에서 이벤트 전파를 막아서 box3의 이벤트가 막힘! 
+            //     console.log('box3');
+            // },true);
+
+        };
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>버블링과 캡쳐링</h1>
+    <div>
+        box1
+        <div>
+            box2
+            <div>
+                box3
+            </div>
+        </div>
+    </div>
+</body>
+</html>

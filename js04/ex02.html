@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style rel="stylesheet" type="text/css">
+        h1{
+            color: red;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload=function(){
+            var h1=document.querySelector('h1');
+            console.log('level2의 로딩');
+            var btn=document.querySelector('button');
+            btn.onclick=function(){
+                console.log('level2');
+            };
+            btn.addEventListener('click',function(){
+                console.log('level3');
+            });
+            console.log(btn.onclick);
+            console.log(h1.style.color); // 안나옴!!
+            //엘리먼트의 프로퍼티로 접근한다는 것은 해당엘리먼트가 프로퍼티로 선언(인라인 선언)이 된다는 의미!
+            //선언안되면 안나오기 때문!
+        };
+        /*
+        로딩은 한번밖에 안하며, 굳이 onload를 2개로 작성할 필요가 없다
+        로딩에 대한 function의 정의가 필요하면 하나로 뭉처서 하면 되기 때문
+        따라서 onload는 DOM level2를 사용한다!
+        + function을 추가로 더 작성해야하면 DOM level3를 사용한다!
+
+        DOM level2는 거의 inline방식(DOM level1 수준) 이다
+        */
+
+        // window.addEventListener('load',function(){
+        //     console.log('level3의 로딩');
+        // });
+        // window.onload=function(){
+        //     console.log('level2의 로딩2');
+        // };
+        // window.addEventListener('load',function(){
+        //     console.log('level3의 로딩2');
+        // });
+    </script>
+</head>
+<body>
+    <h1>이벤트 선택</h1>
+    <button>버튼1</button>
+</body>
+</html>
