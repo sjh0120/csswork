@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style rel="stylesheet" type="text/css">
+        span{
+            background-color: red;
+        }
+    </style>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        window.onload=function(){
+            // //$('span').attr('style','color:red'); // 인라인방식이라 우선순위가 더높음
+            // console.log($('span').attr('style'));
+            // //css를 통한 결과는 안나옴
+            // console.log($('span').css('background-color'));
+            // //attr을 통한 결과는 안나옴
+            // console.log($('a').attr('href'));
+            // $('a').attr('href','https://daum.net');
+            // $('span').attr('onclick','(function(){location.href="https://google.com";})();');
+            // console.log($('form input').attr('type'));
+            // $('form input').attr('type','password');
+            // $('form button').attr('type','reset');
+            // $('form button').removeAttr('type');
+            // //속성 자체가 없어진다고 해서 button을 누를 때 이동을 안하도록 되지는 않음
+            // $('a').removeAttr('href');
+
+            console.log($('input').eq(0).prop('readonly'));
+            console.log($('input').eq(1).prop('checked'));
+            console.log($('input').eq(2).prop('checked'));
+            console.log($('input').eq(3).prop('checked'));
+            console.log($('option').eq(0).prop('selected'));
+            console.log($('option').eq(1).prop('selected'));
+            console.log($('option').eq(2).prop('selected'));
+            console.log($('option').eq(3).prop('selected'));
+
+            //$('input').eq(1).prop('checked',true);
+            //$('option').eq(3).prop('selected',true);
+
+            //p -> text(), html()
+            //input select textarea checkbox -> val()
+            //그러나 checkbox는 prop를 통해서 checked여부를 확인해야한다!
+
+            //$('input:checkbox').val(); -> on
+
+        };
+    </script>
+</head>
+<body>
+    <p>다음으로 이동<a href="#">link</a></p>
+    <form action="ex13.html" method="get">
+        <div><input type="text" readonly="readonly" /></div>
+        <div>
+            <input type="checkbox"/>item1
+            <input type="checkbox" checked="checked"/>item2
+            <input type="checkbox"/>item3
+        </div>
+        <div>
+            <select>
+                <option>item1</option>
+                <option selected="selected">item2</option>
+                <option>item3</option>
+                <option>item4</option>
+            </select>
+        </div>
+        <div><button>이동</button></div>
+        <div><textarea></textarea></div>
+    </form>
+    <span>이동</span>
+</body>
+</html>

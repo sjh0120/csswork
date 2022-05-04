@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        var ele1,ele2;
+        window.onload=function(){
+            // ele1=$('h2').remove();
+            // ele2=$('h3').detach();
+            //remove detach 둘다 차이 없는듯
+            // $('h1').empty();
+            /*
+            $('h1').html(); -> ''으로 남음
+            $('h2').html(); -> undefined로 지움
+            $('h3').html(); -> undefined로 지움
+            즉 empty()는 h1 아래의 노드(텍스트 노드 포함)를 전부 지운다
+            */
+
+            //$('span').unwrap('h4');
+            /*
+            $('a').unwrap('h4'); => <h4></h4>(부모요소 태그)를 지운다!
+            */
+
+            //$('span').wrap('h1');
+            /*
+            반대로 wrapping 방법
+            elements에서 보면 각각 h1태그로 쌓여있다
+            */
+            
+            //$('span').wrapAll('h1');
+            //결과는 같아 보일지라도 body의 h4 3줄을 전부다 한개의 h1태그로 묶는다는 차이점이 있다!
+            
+            // $('span').wrapInner('<a href="#"></a>');
+            //안의 요소들에 대해 전부 a태그로 변경한다
+
+            // $('<div>edit</div>').replaceAll('h4');
+            //통채로 바꾸기 때문에 잘안쓸듯!
+            //target이 뒤로간다! 유의하기!
+
+            // $('h1').before($('h1').clone().html('수정됨'));
+            // $('h1').clone().insertBefore('h1');
+            //위랑 유사한 기능!
+
+            //글자까지 바꾼다면?
+            $('h1').clone().html('edit').insertBefore('h1');
+        };
+    </script>
+</head>
+<body>
+    <h1>remove & detach</h1>
+    <h2>remove</h2>
+    <h3>detach</h3>
+    <h4><span>부모요소<a href="#">link1</a>입니다</span></h4>
+    <h4><span>부모요소<a href="#">link2</a>입니다</span></h4>
+    <h4><span>부모요소<a href="#">link3</a>입니다</span></h4>
+    
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style rel="stylesheet" type="text/css">
+        .cl1{
+            background-color: aqua;
+        }
+        .cl2{
+            color: red;
+        }
+        .cl3{
+            border: 1px solid gray;
+        }
+    </style>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        window.onload=function(){
+            $('h1').addClass('cl1').addClass('cl2');
+            //$('h1').removeClass('cl1');
+            $('h1').removeClass('cl3'); //inline까지 통제가 된다!
+
+            $('h2').removeClass('cl1'); // 한번에 클래스 부여가 가능하다!
+
+            //$('h1').hasClass('cl1'); -> class를 가지고 있으면 true / 없으면 false
+
+            /*토글 클래스*/
+            //$('h1').toggleClass('cl2'); -> class cl2 => 있으면 cl2를 끔 / 없으면 cl2 켬
+            
+
+        };
+    </script>
+</head>
+<body>
+    <h1 class="cl3">attach class</h1>
+    <h2>제목1</h2>
+    <h2>제목2</h2>
+    <h2>제목3</h2>
+</body>
+</html>

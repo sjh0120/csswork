@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        window.onload=function(){
+            /*
+            jQuery('h1').css('color','red');
+            jQuery('ul>li:nth-child(2n)').css('color','red');
+            jQuery('.cl2').css('color','blue');
+            jQuery('#id1').css('color','yellowgreen');
+            $('body>h1+p+h2').css('color','hotpink');
+            
+            console.log(typeof jQuery,typeof $, jQuery===$);
+            //타입이 같다! 즉
+            //var func=function(){};
+            //var $$=func;
+            //라는 말이다!
+            */
+            //next로 형제요소를 잡는다
+            //$('h2').next().css('color','red');
+            
+            //ul의 자식
+            // $('ul').children().css('color','red');
+            // $('ul').children().first().css('color','blue');
+            // $('ul').children().last().css('color','yellowgreen');
+
+            //조건문
+            // $('ul').children().eq(1).css('color','pink');
+            // $('ul').children().filter(":eq(2)").css('color','black');
+            // $('ul').children().filter(":lt(2)").css('color','red');
+            // $('ul').children().filter(":gt(3)").css('color','blue');
+            // $('ul').children().filter(":odd()").css('color','yellowgreen');//홀수
+            // $('ul').children().filter(":even()").css('color','yellowgreen');//짝수
+            $('ul').children().first().next().parent().prev().css('color','blue');
+            //jq에서 또한 html의 dom traveling이 쉽다!
+
+            //find는 자손만 잡음
+            //filter는 자기자손까지 잡을 수 있음
+            /*
+            div안에 a태그가 존재, 그 중 몇개는 abc클래스를 가짐
+            a.filter(abc) -> 갯수대로 정상적으로 나옴
+            a.find(abc) -> a태그의 '자식'들 중에 abc 클래스를 가진애를 가지고 옴
+            */
+
+            // $('p').filter(function(idx,ele){
+            //     console.log(idx,ele.innerText);
+            // }).css('color','red'); //=>콘솔에서만 빨간색
+
+            $('p').filter(function(idx,ele){
+                console.log(idx,ele.innerText);
+                return ele.innerText=='내용2';
+            }).css('color','red'); //=>내용2인 p태그에 빨간색
+
+            $('li').has('a').css('color','red');
+            console.log($('h1+p+h2').is('.cl1'));//t/f만 전달 => 라디오박스 체크여부에 따라 t/f결과 전달
+            
+            $('p').css('background-color','blue')
+            .add('h1').css('color','red')
+            .end().css('background-color','gray');
+            //최근 체이닝 .add(h1)의 앞의 요소(p)를 설정
+
+        };
+    </script>
+</head>
+<body>
+    <h1>jquery 선택자</h1>
+    <p></p> 
+    <h1>제목1</h1>
+    <p class="cl1">내용1</p>
+    <h2 class="cl1">제목2</h2>
+    <p class="cl1 cl2">내용2</p>
+    <h2 class="cl2">제목3</h2>
+    <p id="id1">내용3</p>
+    <h2>제목4</h2>
+    <p>내용4</p>
+    <ul>
+        <li>itme1</li>
+        <li>itme2</li>
+        <li>itme3</li>
+        <li>itme4</li>
+        <li>itme5</li>
+    </ul>
+    
+</body>
+</html>

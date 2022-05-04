@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        var cnt=0;
+        window.onload=function(){
+            var callback2=function(){
+                $('li').css('display','none').html(function(idx,old){
+                    console.log(old);
+                    if(idx==cnt)$('#target').html(old);
+                });
+                cnt++;
+                if(cnt==6)cnt=0;
+                setTimeout(callback2,1000);
+            };
+            $(callback2);
+        };
+    </script>
+</head>
+<body>
+    <div id="target"></div>
+    <div>
+        <ul>
+            <li><img src="https://dummyimage.com/600x400/000/fff&text=img01"></li>
+            <li><img src="https://dummyimage.com/600x400/000/fff&text=img02"></li>
+            <li><img src="https://dummyimage.com/600x400/000/fff&text=img03"></li>
+            <li><img src="https://dummyimage.com/600x400/000/fff&text=img04"></li>
+            <li><img src="https://dummyimage.com/600x400/000/fff&text=img05"></li>
+            <li><img src="https://dummyimage.com/600x400/000/fff&text=img06"></li>
+        </ul>
+    </div>
+</body>
+</html>

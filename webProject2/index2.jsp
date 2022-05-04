@@ -2,32 +2,46 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style rel="stylesheet" type="text/css">
-        body{
-            background-color: gray;
-        }
-        .card_list{
-            margin: 0px auto;
-            width: 320px;
-            background-color: aqua;
-        }
-        
-        .card_area{
-            position: relative;
-            left: -640px;
-            padding: 0px;
-            width: 2240px;
-            height: 500px;
-            border: 0px solid black;
-            text-align: center;
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="css/base.css">
+        <style rel="stylesheet" type="text/css">
+            body{
+                margin: 0px;
+                padding: 0px;
+            }
+            
+            .card_list{
+                position: relative;
+                top: 200px;
+                width: 320px;
+                height: 500px;
+                margin: 0px auto;
                 
-        }
-        .card_items{
+                padding-top: 20px;
+                padding-bottom: 10px;
+                /*이 구간에선 opacity를 풀어야하는데*/
+                border: 0.3px solid rgb(120,120,120);
+                background-color: rgb(120,120,120);
+                border-radius: 5%;
+                
+            }
+            .card_area{
+                position: relative;
+                left: -640px;
+                padding: 0px;
+                margin: 0px;
+                width: 2240px;
+                /*width: 2240px;*/
+                height: 500px;
+                
+                border: 0px solid black;
+                text-align: center;
+                opacity: 0.9;
+                
+            }
+
+            .card_items{
                 display: block;
                 padding: 0px;
                 margin-left: 10px;
@@ -41,9 +55,42 @@
                 height: 500px;
                 opacity: 0.5;
                 float: left;
-        }
-    </style>
-    <script type="text/javascript">
+            }
+            .card_items:hover{
+                opacity: 0.9;
+                background-color: black;
+                color: white;
+            }
+
+            .card_items>h1{
+                padding: 0px;
+                margin: 0px;
+                text-align: center;
+            }
+
+            .btn_zone{
+                margin: 0px;
+                padding: 0px;
+                position:absolute;
+                top:80%;
+                width: 100%;
+                border: 0px solid gray;
+            }
+            .btn_zone>*, .btn_zone>button>*{
+                margin: 0px;
+                padding: 0px;
+            }
+            #btn_before{
+                margin-left: 10px;
+                float: left;
+            }
+            #btn_after{
+                margin-right: 10px;
+                float: right;
+            }
+
+        </style>
+        <script type="text/javascript">
         var cnt=1;
         window.onload=function(){
             var btnGoLeft=document.querySelector('#btn_before');
@@ -55,16 +102,35 @@
 
             btnGoLeft.onclick=goLeft;
             btnGoRight.onclick=goRight;
+
+            // var mainCardZone=document.querySelector('.card_list');
+            // mainCardZone.addEventListener('mouseenter',function(e){
+            //     e.stopPropagation();
+            //     console.log('되나');
+            // });
         }
+
         function goRight(){
             cnt++;
             if(cnt==4){
                 cnt=1;
                 var cardMarginLeft=document.querySelector('.card_area');
-                cardMarginLeft.style.marginLeft='0px';
+                //cardMarginLeft.style.marginLeft='0px';
+                var move=setInterval(function(){//+640
+                    cardMarginLeft.style.marginLeft=parseInt(cardMarginLeft.style.marginLeft)+40+'px';
+                },25);
+                setTimeout(function(){
+                    clearTimeout(move)
+                },400);
             }else{
                 var cardMarginLeft=document.querySelector('.card_area');
-                cardMarginLeft.style.marginLeft=parseInt(cardMarginLeft.style.marginLeft)-320+'px';
+                //cardMarginLeft.style.marginLeft=parseInt(cardMarginLeft.style.marginLeft)-320+'px';
+                var move=setInterval(function(){
+                    cardMarginLeft.style.marginLeft=parseInt(cardMarginLeft.style.marginLeft)-10+'px';
+                },10);
+                setTimeout(function(){
+                    clearTimeout(move)
+                },320);
             }
             
         };
@@ -74,21 +140,32 @@
             if(cnt==0){
                 cnt=3;  
                 var cardMarginLeft=document.querySelector('.card_area');
-                cardMarginLeft.style.marginLeft='-640px';
-                console.log(cnt);
+                //cardMarginLeft.style.marginLeft='-640px';
+                var move=setInterval(function(){//-640
+                    cardMarginLeft.style.marginLeft=parseInt(cardMarginLeft.style.marginLeft)-40+'px';
+                },25);
+                setTimeout(function(){
+                    clearTimeout(move)
+                },400);
             }else{
                 var cardMarginLeft=document.querySelector('.card_area');
-                cardMarginLeft.style.marginLeft=parseInt(cardMarginLeft.style.marginLeft)+320+'px';
+                //cardMarginLeft.style.marginLeft=parseInt(cardMarginLeft.style.marginLeft)+320+'px';
+                //setInterver 통해서 실행하고 setTimeout으로 일정시간이 지나면 끝나도록 설정하기
+                var move=setInterval(function(){
+                    cardMarginLeft.style.marginLeft=parseInt(cardMarginLeft.style.marginLeft)+10+'px';
+                },10);
+                setTimeout(function(){
+                    clearTimeout(move)
+                },320);
                 console.log(cnt);
             }
             
         };
 
-        
-        
-    </script>
-</head>
-<body>
+            
+            
+        </script>
+    </head>
     <body>
         <div class="card_list">
             <div class="card_area">
@@ -121,5 +198,4 @@
             <button id="btn_after">버튼2</button>
         </div>
     </body>
-</body>
 </html>

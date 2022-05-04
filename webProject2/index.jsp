@@ -10,14 +10,17 @@
                 margin: 0px;
                 padding: 0px;
             }
+            
             .card_list{
                 width: 320px;
                 height: 500px;
                 margin: 0px auto;
                 
-                overflow: hidden;
                 padding-top: 20%;
                 padding-bottom: 10%;
+                /*이 구간에선 opacity를 풀어야하는데*/
+                
+                
             }
             .card_area{
                 position: relative;
@@ -29,8 +32,10 @@
                 
                 border: 0px solid black;
                 text-align: center;
+                opacity: 0.9;
                 
             }
+
             .card_items{
                 display: block;
                 padding: 0px;
@@ -47,7 +52,7 @@
                 float: left;
             }
             .card_items:hover{
-                opacity: 1.0;
+                opacity: 1;
             }
 
             .card_items>h1{
@@ -80,27 +85,46 @@
 
         </style>
         <script type="text/javascript">
-            var cnt=1;
-            window.onload=function(){
-                var btnGoLeft=document.querySelector('#btn_before');
-                var btnGoRight=document.querySelector('#btn_after');
-                var cardMarginLeft=document.querySelector('.card_area');
-                cardMarginLeft.style.marginLeft='0px';
+        var cnt=1;
+        window.onload=function(){
+            var btnGoLeft=document.querySelector('#btn_before');
+            var btnGoRight=document.querySelector('#btn_after');
+            var cardMarginLeft=document.querySelector('.card_area');
+            cardMarginLeft.style.marginLeft='0px';
 
-                console.log('test',cardMarginLeft);
+            console.log('test',cardMarginLeft);
 
-                btnGoLeft.onclick=goLeft;
-                btnGoRight.onclick=goRight;
-            }
-            function goRight(){
+            btnGoLeft.onclick=goLeft;
+            btnGoRight.onclick=goRight;
+
+            // var mainCardZone=document.querySelector('.card_list');
+            // mainCardZone.addEventListener('mouseenter',function(e){
+            //     e.stopPropagation();
+            //     console.log('되나');
+            // });
+        }
+
+        function goRight(){
             cnt++;
             if(cnt==4){
                 cnt=1;
                 var cardMarginLeft=document.querySelector('.card_area');
-                cardMarginLeft.style.marginLeft='0px';
+                //cardMarginLeft.style.marginLeft='0px';
+                var move=setInterval(function(){//+640
+                    cardMarginLeft.style.marginLeft=parseInt(cardMarginLeft.style.marginLeft)+40+'px';
+                },25);
+                setTimeout(function(){
+                    clearTimeout(move)
+                },400);
             }else{
                 var cardMarginLeft=document.querySelector('.card_area');
-                cardMarginLeft.style.marginLeft=parseInt(cardMarginLeft.style.marginLeft)-320+'px';
+                //cardMarginLeft.style.marginLeft=parseInt(cardMarginLeft.style.marginLeft)-320+'px';
+                var move=setInterval(function(){
+                    cardMarginLeft.style.marginLeft=parseInt(cardMarginLeft.style.marginLeft)-10+'px';
+                },10);
+                setTimeout(function(){
+                    clearTimeout(move)
+                },320);
             }
             
         };
@@ -110,11 +134,23 @@
             if(cnt==0){
                 cnt=3;  
                 var cardMarginLeft=document.querySelector('.card_area');
-                cardMarginLeft.style.marginLeft='-640px';
-                console.log(cnt);
+                //cardMarginLeft.style.marginLeft='-640px';
+                var move=setInterval(function(){//-640
+                    cardMarginLeft.style.marginLeft=parseInt(cardMarginLeft.style.marginLeft)-40+'px';
+                },25);
+                setTimeout(function(){
+                    clearTimeout(move)
+                },400);
             }else{
                 var cardMarginLeft=document.querySelector('.card_area');
-                cardMarginLeft.style.marginLeft=parseInt(cardMarginLeft.style.marginLeft)+320+'px';
+                //cardMarginLeft.style.marginLeft=parseInt(cardMarginLeft.style.marginLeft)+320+'px';
+                //setInterver 통해서 실행하고 setTimeout으로 일정시간이 지나면 끝나도록 설정하기
+                var move=setInterval(function(){
+                    cardMarginLeft.style.marginLeft=parseInt(cardMarginLeft.style.marginLeft)+10+'px';
+                },10);
+                setTimeout(function(){
+                    clearTimeout(move)
+                },320);
                 console.log(cnt);
             }
             

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        window.onload=function(){
+            //$('ul').html($('ul').html()+'<li>item6</li>');
+            //$('ul').html('<li>item6</li>'+$('ul').html());
+            // $('ul').append('<li>item6</li>');
+            $('<li>item6</li>').appendTo('ul');
+            // $('ul').prepend('<li>item0</li>');
+            $('<li>item0</li>').prependTo('ul');
+            /*
+            구분잘하기
+            $('<li>item0</li>') => 단순 li엘리먼트 생성
+            $('ul').prepend('<li>item0</li>'); => ul 엘리먼트를 잡고 추가
+            그렇다면
+            $('ul').prepend('item0'); => html 문법상 안맞지만 ul 맨 앞에 item0 단순 추가
+            그럼
+            $('item0') => 단순 item0을 찾는 것!
+            따라서
+            $('item0').prependTo('ul'); => 아무 실행 없음!
+            
+            항상 명령어 실행의 앞의 대상이 잡은 대상! => 잡은대상이 명령을 적용하는 대상이다! 생각하면서 구분하기!
+            */
+            
+        };
+    </script>
+</head>
+<body>
+    <h1>append & prepend</h1>
+    <div>
+        <ul>
+            <li>item1</li>
+            <li>item2</li>
+            <li>item3</li>
+            <li>item4</li>
+            <li>item5</li>
+        </ul>
+    </div>
+</body>
+</html>

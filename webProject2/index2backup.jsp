@@ -18,11 +18,13 @@
         }
         
         .card_area{
-                padding-left: 0px;
-                width: 2240px;
-                height: 500px;
-                border: 0px solid black;
-                text-align: center;
+            position: relative;
+            left: -640px;
+            padding: 0px;
+            width: 2240px;
+            height: 500px;
+            border: 0px solid black;
+            text-align: center;
                 
         }
         .card_items{
@@ -53,16 +55,34 @@
 
             btnGoLeft.onclick=goLeft;
             btnGoRight.onclick=goRight;
+
+            var mainCardZone=document.querySelector('.card_list');
+            mainCardZone.addEventListener('mouseenter',function(e){
+                e.stopPropagation();
+                console.log('되나');
+            });
         }
         function goRight(){
             cnt++;
             if(cnt==4){
                 cnt=1;
                 var cardMarginLeft=document.querySelector('.card_area');
-                cardMarginLeft.style.marginLeft='640px';
+                //cardMarginLeft.style.marginLeft='0px';
+                var move=setInterval(function(){//+640
+                    cardMarginLeft.style.marginLeft=parseInt(cardMarginLeft.style.marginLeft)+80+'px';
+                },50);
+                setTimeout(function(){
+                    clearTimeout(move)
+                },400);
             }else{
                 var cardMarginLeft=document.querySelector('.card_area');
-                cardMarginLeft.style.marginLeft=parseInt(cardMarginLeft.style.marginLeft)-320+'px';
+                //cardMarginLeft.style.marginLeft=parseInt(cardMarginLeft.style.marginLeft)-320+'px';
+                var move=setInterval(function(){
+                    cardMarginLeft.style.marginLeft=parseInt(cardMarginLeft.style.marginLeft)-10+'px';
+                },10);
+                setTimeout(function(){
+                    clearTimeout(move)
+                },320);
             }
             
         };
@@ -72,11 +92,23 @@
             if(cnt==0){
                 cnt=3;  
                 var cardMarginLeft=document.querySelector('.card_area');
-                cardMarginLeft.style.marginLeft='0px';
-                console.log(cnt);
+                //cardMarginLeft.style.marginLeft='-640px';
+                var move=setInterval(function(){//-640
+                    cardMarginLeft.style.marginLeft=parseInt(cardMarginLeft.style.marginLeft)-80+'px';
+                },50);
+                setTimeout(function(){
+                    clearTimeout(move)
+                },400);
             }else{
                 var cardMarginLeft=document.querySelector('.card_area');
-                cardMarginLeft.style.marginLeft=parseInt(cardMarginLeft.style.marginLeft)+320+'px';
+                //cardMarginLeft.style.marginLeft=parseInt(cardMarginLeft.style.marginLeft)+320+'px';
+                //setInterver 통해서 실행하고 setTimeout으로 일정시간이 지나면 끝나도록 설정하기
+                var move=setInterval(function(){
+                    cardMarginLeft.style.marginLeft=parseInt(cardMarginLeft.style.marginLeft)+10+'px';
+                },10);
+                setTimeout(function(){
+                    clearTimeout(move)
+                },320);
                 console.log(cnt);
             }
             
