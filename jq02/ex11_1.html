@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style rel="stylesheet" type="text/css">
+        body{
+            margin: 0px;
+        }
+        div{
+            width: 600px;
+            overflow: hidden;
+        }
+        div>ul{
+            list-style: none;
+            padding: 0px;
+            width: 4200px;
+        }
+        div>ul>li{
+            padding: 0px;
+            float: left;
+        }
+        div>ul>li>*{
+            padding: 0px;
+        }
+    </style>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+        var callback1=function(){
+            $('ul').css({marginLeft:"0px"})
+            .delay(1000)
+            .animate({marginLeft:"-=600"},1000)
+            .delay(1000)
+            .animate({marginLeft:"-=600"},1000)
+            .delay(1000)
+            .animate({marginLeft:"-=600"},1000)
+            .delay(1000)
+            .animate({marginLeft:"-=600"},1000)
+            .delay(1000)
+            .animate({marginLeft:"-=600"},1000)
+            .delay(1000)
+            .animate({marginLeft:"-=600"},1000,function(){
+                setTimeout(callback1);
+            })
+        };
+
+        window.onload=callback1;
+    </script>
+</head>
+<body>
+    <div>
+        <ul>
+            <li><img src="https://dummyimage.com/600x400/000/fff&text=image01" alt=""></li>
+            <li><img src="https://dummyimage.com/600x400/000/fff&text=image02" alt=""></li>
+            <li><img src="https://dummyimage.com/600x400/000/fff&text=image03" alt=""></li>
+            <li><img src="https://dummyimage.com/600x400/000/fff&text=image04" alt=""></li>
+            <li><img src="https://dummyimage.com/600x400/000/fff&text=image05" alt=""></li>
+            <li><img src="https://dummyimage.com/600x400/000/fff&text=image06" alt=""></li>
+            <li><img src="https://dummyimage.com/600x400/000/fff&text=image01" alt=""></li>
+        </ul>
+    </div>
+</body>
+</html>

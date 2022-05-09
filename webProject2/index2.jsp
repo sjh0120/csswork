@@ -9,6 +9,7 @@
             body{
                 margin: 0px;
                 padding: 0px;
+                overflow: hidden;
             }
             
             .card_list{
@@ -34,6 +35,7 @@
                 width: 2240px;
                 /*width: 2240px;*/
                 height: 500px;
+                overflow:hidden;
                 
                 border: 0px solid black;
                 text-align: center;
@@ -72,7 +74,7 @@
                 margin: 0px;
                 padding: 0px;
                 position:absolute;
-                top:80%;
+                top:20%;
                 width: 100%;
                 border: 0px solid gray;
             }
@@ -81,12 +83,22 @@
                 padding: 0px;
             }
             #btn_before{
+                display: block;
                 margin-left: 10px;
                 float: left;
+                height: 300px;
+                width: 300px;
+                border: 0px solid gray;
+                background-color: rgb(120,120,120);
             }
             #btn_after{
+                display: block;
                 margin-right: 10px;
                 float: right;
+                height: 600px;
+                width: 300px;
+                border: 0px solid gray;
+                opacity: 0.3;
             }
 
         </style>
@@ -102,12 +114,7 @@
 
             btnGoLeft.onclick=goLeft;
             btnGoRight.onclick=goRight;
-
-            // var mainCardZone=document.querySelector('.card_list');
-            // mainCardZone.addEventListener('mouseenter',function(e){
-            //     e.stopPropagation();
-            //     console.log('되나');
-            // });
+            
         }
 
         function goRight(){
@@ -115,7 +122,6 @@
             if(cnt==4){
                 cnt=1;
                 var cardMarginLeft=document.querySelector('.card_area');
-                //cardMarginLeft.style.marginLeft='0px';
                 var move=setInterval(function(){//+640
                     cardMarginLeft.style.marginLeft=parseInt(cardMarginLeft.style.marginLeft)+40+'px';
                 },25);
@@ -124,7 +130,6 @@
                 },400);
             }else{
                 var cardMarginLeft=document.querySelector('.card_area');
-                //cardMarginLeft.style.marginLeft=parseInt(cardMarginLeft.style.marginLeft)-320+'px';
                 var move=setInterval(function(){
                     cardMarginLeft.style.marginLeft=parseInt(cardMarginLeft.style.marginLeft)-10+'px';
                 },10);

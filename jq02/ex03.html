@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+        /*load onload는 코드의 위치에 따라 실행 순서가 달라짐*/
+        /*그러나 ready는 어디에 있든지 간에 load onload보다 먼저 실행됨*/
+
+        // $(window).load(function(){
+        //     console.log('load',$('h1').text());
+        // });
+        //잘 안씀!
+        window.onload=function(){
+            console.log('js',$('h1').text());
+        };
+        
+        // $(window).ready(function(){
+        //     console.log('window ready', $('h1').text());
+        // });
+        //잘 안씀!
+        $(document).ready(function(){
+            console.log('document ready', $('h1').text());
+            $(function(){
+                console.log('레디였기에 바로 실행');
+            });
+        });
+        /*ready -> 준비된 시점! document의 element를 제어할 수 있는 시점*/
+        //dom level3의 방식으로 이벤트를 추가하면 계속 추가되는 방식
+
+        $(document).on('ready',function(){
+
+        });//ready되면 트리거 작동되도록
+
+
+        $(function(){
+            console.log('$(function1)',$('h1').text());
+        });
+        $(function(){
+            console.log('$(function2)',$('h1').text());
+        });
+    </script>
+</head>
+<body>
+    <h1>event</h1>
+</body>
+</html>

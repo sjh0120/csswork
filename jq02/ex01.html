@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style rel="stylesheet" type="text/css">
+        h1{
+            margin: 10px;
+            padding: 5px;
+            border: 1px solid gray;
+        }
+    </style>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+$(function(){
+    $('h1').css('background-color','red');
+    console.log($('h1').css('height'));//px까지 출력
+    console.log($('h1').height(),$('h1').innerHeight()
+        ,$('h1').outerHeight(),$('h1').outerHeight(true));//숫자만 출력
+    //margin -> outer inner 영향 x
+    //padding -> outer inner 영향 o
+    //border -> outer 영향 o inner 영향 x
+    //outerHeight() -> border 까지 포함한 높이
+    //innerHetight() -> border 제외 높이
+    //,$('h1').outerHeight(true) => margin 까지 부여 가능!
+    $('h1').height(100);//높이 부여 또한 가능
+    $('h1').width(80);//넓이 부여 또한 가능
+    console.log($('body').height(), $(document).height(),$(window).height());
+    console.log($('body').height(), $(document).innerHeight(),$(window).innerHeight());
+    
+});
+    </script>
+</head>
+<body>
+    <h1>css</h1>
+    <h2>제목</h2>
+    <p>내용</p>
+    
+</body>
+</html>

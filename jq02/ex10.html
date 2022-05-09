@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style rel="stylesheet" type="text/css">
+        div{
+            background-color: yellow;
+        }
+    </style>
+    <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $('button').first()
+                .click(function(){
+                    // $('div').hide(1000,function(){
+                    //     //alert('숨김');
+                    //     //$('div').show('slow');
+                    //     //숨기고 다시 보이기
+                    // });
+
+                    $('div').stop().slideUp(3000,'easeInElastic');
+
+                    // $('div').fadeOut(3000);
+                })
+                .next()
+                .click(function(){
+                    // $('div').show({
+                    //     duration : 3000,
+                    //     easing: 'swing', // default -> swing / swing, linear 2개중 한개 올 수 있음
+                    //     progress :function(a,b,c){
+                    //         console.log(a,b,c);
+                    //         //b -> 퍼센트(0~1) / c -> 남은시간(3000-x)
+                    //     }
+                    // });
+
+                    $('div').stop().slideDown(3000,'easeInElastic');
+
+                    // $('div').fadeIn(3000);
+                })
+                .next()
+                .click(function(){
+                    // $('div').toggle(3000);
+
+                    $('div').stop().slideToggle(3000);
+
+                    // $('div').fadeToggle(3000);
+                })
+                .next()
+                .click(function(){
+                    $('div').stop().fadeTo(3000,0.7);
+                })
+                .next()
+                .click(function(){
+                    $('div').stop().fadeTo(3000,0.2);
+                })
+        });
+    </script>
+</head>
+<body>
+    <h1>animate</h1>
+    <button>hide</button>
+    <button>show</button>
+    <button>toggle</button>
+    <button>etc1</button>
+    <button>etc2</button>
+    <div>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat odit deleniti vero quisquam, eum modi eveniet molestias obcaecati consequatur, repellendus non! Commodi laborum alias delectus doloremque ducimus dicta obcaecati unde perspiciatis, earum architecto deserunt voluptatibus rerum dolorem nemo reprehenderit! Quod quia, ipsa esse commodi, impedit incidunt similique accusamus ipsam vel fugit fugiat! Atque id molestias, eveniet suscipit quas odio consectetur voluptas repudiandae! Esse non fugit sunt, amet aliquid dolorem soluta totam, libero corporis dolores rem maiores inventore iusto dolor ea. Voluptate quaerat, neque veniam nobis excepturi enim sint quia perspiciatis explicabo modi. Praesentium facilis officia beatae soluta itaque nemo corporis?</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum nulla facilis dolores! Nihil voluptate itaque ea quasi quaerat aliquid vero ipsa, quia veritatis voluptatibus provident cumque explicabo modi consequuntur iure.</p>
+    </div>
+    <a href="#">end</a>
+</body>
+</html>
